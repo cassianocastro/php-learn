@@ -88,12 +88,12 @@ class HTMLBinaryElement extends HTMLElement
 
     protected function renderOpenTag(): string
     {
-        return "<$this->tag>";
+        return "<{$this->tag}>";
     }
 
     protected function renderCloseTag(): string
     {
-        return "</$this->tag>";
+        return "</{$this->tag}>";
     }
 
     private function internalRenderContent($conteudo)
