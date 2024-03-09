@@ -14,5 +14,5 @@ $conn = new mysqli('localhost', 'root', '', 't308');
 
 if ( $conn->connect_error )
 {
-    die('Connect Error (' . $conn->connect_errno . ') ' . $conn->connect_error);
+    die("Connect error({$conn->connect_errno}): {$conn->connect_error}");
 }
