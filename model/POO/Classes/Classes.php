@@ -204,7 +204,7 @@ class SimpleObject
 {
 
     static private $_instanceCount  = 0;
-    static private $_instancesArray = array();
+    static private $_instancesArray = [];
 
     private $_instanceId;
     private $_instanceGUID;
