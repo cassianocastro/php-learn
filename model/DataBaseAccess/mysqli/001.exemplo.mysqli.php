@@ -13,22 +13,31 @@ $result = $mysqli->query('SELECT * FROM alunos');
 
 if ( $result )
 {
-    echo "<p> Linhas retornadas: {$result->num_rows}";
-    echo "<table>
-    <tr>
-    <td>ID</td>
-    <td>NOME</td>
-    </tr>";
+    echo <<<HTML
+        <p>
+            Linhas retornadas: {$result->num_rows}
+        </p>
+
+        <table>
+            <tr>
+                <td>ID</td>
+                <td>NOME</td>
+            </tr>
+    HTML;
 
     while ( $linha = $result->fetch_assoc() )
     {
-        echo "<tr>
-        <td>$linha[id]</td>
-        <td>$linha[nome]</td>
-        </tr>";
+        echo <<<HTML
+            <tr>
+                <td>{$linha["id"]}</td>
+                <td>{$linha["nome"]}</td>
+            </tr>
+        HTML;
     }
 
-    echo "</table>";
+    echo <<<HTML
+        </table>
+    HTML;
 }
 
 $result->data_seek(0);
@@ -39,7 +48,9 @@ if ( $result )
 
     while ( $linha = $result->fetch_assoc() )
     {
-        echo "<option value=\"$linha[id]\">$linha[nome]</option> ";
+        echo <<<HTML
+            <option value="{$linha['id']}" label="{$linha['nome']}"></option>
+        HTML;
     }
 
     echo "</select>";
@@ -56,6 +67,4 @@ while ( $row = $result->fetch_assoc() )
 
 $result->close();
 
-echo "<pre>";
-print_r($array);
-echo "</pre>";
+echo "<pre>", print_r($array, true), "</pre>";
