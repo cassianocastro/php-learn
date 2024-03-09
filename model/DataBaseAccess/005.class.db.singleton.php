@@ -1,8 +1,8 @@
 <?php
-define("DB_USER","root");
-define("DB_PASS","");
-define("DB_HOST","localhost");
-define("DB_NAME","t308");
+define("DB_USER", "root");
+define("DB_PASS", "");
+define("DB_HOST", "localhost");
+define("DB_NAME", "t308");
 
 abstract class DbSingleton
 {
@@ -11,7 +11,7 @@ abstract class DbSingleton
     static protected $user   = DB_USER;
     static protected $pass   = DB_PASS;
     static protected $dbname = DB_NAME;
-    static protected $instance = array();
+    static protected $instance = [];
 
     private function __construct()
     {
@@ -46,7 +46,7 @@ class DStPDO extends DbSingleton
                 "mysql:host=" . static::$host . ";dbname=" . static::$dbname,
                 static::$user,
                 static::$pass,
-                array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'")
+                [ PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'" ]
             );
         }
         catch ( Exception $e )
@@ -63,12 +63,7 @@ class DStMySQLi extends DbSingleton
     {
         try
         {
-            return new mysqli(
-                static::$host,
-                static::$user,
-                static::$pass,
-                static::$dbname
-            );
+            return new mysqli(static::$host, static::$user, static::$pass, static::$dbname);
         }
         catch ( Exception $e )
         {
