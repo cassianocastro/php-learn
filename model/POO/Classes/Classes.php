@@ -1,17 +1,28 @@
 <?php
 
+/**
+ *
+ */
 class Pessoa
 {
-    // Atributos da classe
+
+    /**
+     * Atributos da classe
+     */
     var $idade = 20;
 
-    // Métodos da classe
+    /**
+     * Métodos da classe
+     */
     public function mostra(): void
     {
         echo __METHOD__, PHP_EOL, "Idade da pessoa: {$this->idade}", PHP_EOL;
     }
 }
 
+/**
+ *
+ */
 class ClasseExemplo
 {
 
@@ -28,6 +39,9 @@ class ClasseExemplo
     }
 }
 
+/**
+ *
+ */
 class Correntista
 {
 
@@ -45,6 +59,9 @@ class Correntista
     }
 }
 
+/**
+ *
+ */
 class Conta
 {
 
@@ -62,6 +79,9 @@ class Conta
     }
 }
 
+/**
+ *
+ */
 class MinhaClasse
 {
 
@@ -79,6 +99,9 @@ class MinhaClasse
     }
 }
 
+/**
+ *
+ */
 class ClasseA
 {
 
@@ -106,6 +129,9 @@ class ClasseA
     }
 }
 
+/**
+ *
+ */
 class ClasseB extends ClasseA
 {
 
@@ -141,6 +167,9 @@ class ClasseB extends ClasseA
     }
 }
 
+/**
+ *
+ */
 class ClasseC extends ClasseA
 {
 
@@ -160,11 +189,17 @@ class ClasseC extends ClasseA
     // como não reescreveu destructor assume da pai
 }
 
+/**
+ *
+ */
 class ClasseD extends ClasseA
 {
     // se não criar o constructor nem o destructor, acaba herdando da classe pai
 }
 
+/**
+ *
+ */
 class SimpleObject
 {
 
@@ -237,11 +272,17 @@ class SimpleObject
     }
 }
 
+/**
+ *
+ */
 class ChildObject extends SimpleObject
 {
 
 }
 
+/**
+ *
+ */
 class ChildObject2 extends SimpleObject
 {
 
