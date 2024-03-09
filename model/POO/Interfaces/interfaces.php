@@ -11,5 +11,3 @@ interface iHTMLElement
 {
     public function render() : string;
 }
-
-?>
