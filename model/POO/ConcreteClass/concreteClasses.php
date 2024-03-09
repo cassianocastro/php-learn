@@ -102,17 +102,8 @@ class HTMLBinaryElement extends HTMLElement
         {
             return $conteudo->render();
         }
-        else
-        {
-            if ( is_string( $conteudo) )
-            {
-                return $conteudo;
-            }
-            else
-            {
-                return "?";
-            }
-        }
+
+        return ( is_string($conteudo) ) ? $conteudo : "?";
     }
 
     public function render(): string
@@ -164,7 +155,7 @@ class Template implements iTemplate
 
     public function __construct()
     {
-        $this->vars = array();
+        $this->vars = [];
     }
 
     public function setVariable($name, $var)
@@ -176,7 +167,7 @@ class Template implements iTemplate
     {
         foreach ( $this->vars as $name => $value )
         {
-            $template = str_replace('{' . $name . '}', $value, $template);
+            $template = str_replace("\{$name\}", $value, $template);
         }
 
         return $template;
@@ -186,7 +177,10 @@ class Template implements iTemplate
 /**
  *
  */
-class MyException extends Exception {}
+class MyException extends Exception
+{
+
+}
 
 /**
  *
