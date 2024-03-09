@@ -11,5 +11,5 @@ catch ( PDOException $e )
 
 $params = [ ':id' => 1 ];
 
-$pdo->prepare('SELECT * FROM alunos WHERE id = :id');
-$pdo->exec($params);
+$statement = $pdo->prepare('SELECT * FROM alunos WHERE id = :id');
+$statement->execute($params);
