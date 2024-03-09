@@ -43,10 +43,9 @@ function calcula_local(&$a, $b = 5)
 /**
  *
  */
-function calcula_glolal()
+function calcula_global()
 {
-    global $a;
-    global $b;
+    global $a, $b;
 
     $a *= 2;
 
