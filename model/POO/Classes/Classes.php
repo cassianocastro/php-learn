@@ -168,8 +168,9 @@ class ClasseD extends ClasseA
 class SimpleObject
 {
 
-    private static $_instanceCount  = 0;
-    private static $_instancesArray = array();
+    static private $_instanceCount  = 0;
+    static private $_instancesArray = array();
+
     private $_instanceId;
     private $_instanceGUID;
 
@@ -181,12 +182,12 @@ class SimpleObject
         self::$_instancesArray[$this->_instanceGUID] = &$this;
     }
 
-    public static function getInstanceCount()
+    static public function getInstanceCount()
     {
         return static::$_instanceCount;
     }
 
-    public static function getInstance($guid)
+    static public function getInstance($guid)
     {
         if ( array_key_exists($guid, self::$_instancesArray) )
         {
@@ -196,7 +197,7 @@ class SimpleObject
         return null;
     }
 
-    public static function getAllInstances()
+    static public function getAllInstances()
     {
         return self::$_instancesArray;
     }
@@ -206,7 +207,7 @@ class SimpleObject
         return serialize($this);
     }
 
-    public static function getAllSerialized()
+    static public function getAllSerialized()
     {
         return serialize(self::$_instancesArray);
     }
@@ -221,7 +222,7 @@ class SimpleObject
         return $this->_instanceId;
     }
 
-    private static function createInstanceGUID()
+    static private function createInstanceGUID()
     {
         if ( function_exists('com_create_guid') )
         {
