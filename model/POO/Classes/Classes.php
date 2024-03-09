@@ -8,7 +8,7 @@ class Pessoa
     // Métodos da classe
     public function mostra(): void
     {
-        echo __METHOD__, PHP_EOL, "Idade da pessoa: $this->idade", PHP_EOL;
+        echo __METHOD__, PHP_EOL, "Idade da pessoa: {$this->idade}", PHP_EOL;
     }
 }
 
@@ -41,7 +41,7 @@ class Correntista
 
     function getNome(): string
     {
-        return "Correntista, $this->nome";
+        return "Correntista, {$this->nome}";
     }
 }
 
@@ -70,12 +70,12 @@ class MinhaClasse
     function __construct(string $nome)
     {
         $this->atributo = $nome;
-        echo "Construtor MinhaClasse: $this->atributo", PHP_EOL;
+        echo "Construtor MinhaClasse: {$this->atributo}", PHP_EOL;
     }
 
     function __destruct()
     {
-        echo "Destruindo MinhaClasse: $this->atributo", PHP_EOL;
+        echo "Destruindo MinhaClasse: {$this->atributo}", PHP_EOL;
     }
 }
 
@@ -97,12 +97,12 @@ class ClasseA
 
     public function mostraApublica()
     {
-        echo "Classe A - mostraA publica - atributoA: $this->atributoA", PHP_EOL;
+        echo "Classe A - mostraA publica - atributoA: {$this->atributoA}", PHP_EOL;
     }
 
     protected function mostraAprotegida()
     {
-        echo "Classe A - mostraA protegida - atributoA: $this->atributoA", PHP_EOL;
+        echo "Classe A - mostraA protegida - atributoA: {$this->atributoA}", PHP_EOL;
     }
 }
 
@@ -137,7 +137,7 @@ class ClasseB extends ClasseA
 
         $this->mostraAprotegida();
 
-        echo "Classe B - mostraB - atributoB: $this->atributoB", PHP_EOL;
+        echo "Classe B - mostraB - atributoB: {$this->atributoB}", PHP_EOL;
     }
 }
 
