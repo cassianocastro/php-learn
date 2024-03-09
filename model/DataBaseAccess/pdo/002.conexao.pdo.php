@@ -9,7 +9,7 @@ try
 }
 catch ( PDOException $e )
 {
-    die('Connection Error: (' . $e->getMessage() . ')');
+    die("Connection Error: ({$e->getMessage()})");
 }
 
 $result = $pdo->query('SELECT * FROM alunos');
