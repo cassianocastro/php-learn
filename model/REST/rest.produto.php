@@ -50,7 +50,7 @@ try
 					$data = [
 						"status"  => "1",
 						"message" => "success",
-						"result"  => "Something wrong!!!"
+						"result"  => "Something wrong!"
                     ];
                 }
 			    break;
@@ -64,17 +64,17 @@ try
 				if ( mysqli_query($conn, $qry) )
                 {
 					$data = [
-						"status"=>"1",
-						"message"=>"success",
-						"result"=>"produto Update successfully"
+						"status"  => "1",
+						"message" => "success",
+						"result"  => "produto Update successfully"
                     ];
                 }
 				else
                 {
 					$data = [
-						"status"=>"1",
-						"message"=>"success",
-						"result"=>"Something wrong!!!"
+						"status"  => "1",
+						"message" => "success",
+						"result"  => "Something wrong!"
                     ];
                 }
 			    break;
@@ -85,17 +85,17 @@ try
 				if ( mysqli_query($conn, $qry) )
                 {
 					$data = [
-						"status"=>"1",
-						"message"=>"success",
-						"result"=>"produto Update successfully"
+						"status"  => "1",
+						"message" => "success",
+						"result"  => "produto Update successfully"
                     ];
                 }
 				else
                 {
 					$data = [
-						"status"=>"1",
-						"message"=>"success",
-						"result"=>"Something wrong!!!"
+						"status"  => "1",
+						"message" => "success",
+						"result"  => "Something wrong!"
                     ];
                 }
 			    break;
@@ -107,7 +107,7 @@ try
     {
 		$data = [
 			"status"  => "0",
-			"message" => "Please enter proper request method!!"
+			"message" => "Please enter proper request method!"
         ];
 
 		echo json_encode($data);
@@ -115,5 +115,5 @@ try
 }
 catch ( Exception $e )
 {
-	echo 'Caught exception: ', $e->getMessage(), "\n";
+	echo "Caught exception: {$e->getMessage()}\n";
 }
