@@ -13,9 +13,12 @@ catch ( PDOException $e )
 }
 
 $result = $pdo->query('SELECT * FROM alunos');
+?>
 
-if ( $result ): ?>
-    <p>Linhas retornadas: <?php $result->rowCount() ?></p>
+<?php if ( $result ): ?>
+    <p>
+        Linhas retornadas: <?= $result->rowCount() ?>
+    </p>
 
     <table>
         <thead>
