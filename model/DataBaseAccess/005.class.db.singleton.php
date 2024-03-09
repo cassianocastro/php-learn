@@ -4,6 +4,9 @@ define("DB_PASS", "");
 define("DB_HOST", "localhost");
 define("DB_NAME", "t308");
 
+/**
+ *
+ */
 abstract class DbSingleton
 {
 
@@ -13,10 +16,7 @@ abstract class DbSingleton
     static protected $dbname = DB_NAME;
     static protected $instance = [];
 
-    private function __construct()
-    {
-
-    }
+    private function __construct() {}
 
     static abstract protected function connect();
 
@@ -35,6 +35,9 @@ abstract class DbSingleton
     }
 }
 
+/**
+ *
+ */
 class DStPDO extends DbSingleton
 {
 
@@ -56,6 +59,9 @@ class DStPDO extends DbSingleton
     }
 }
 
+/**
+ *
+ */
 class DStMySQLi extends DbSingleton
 {
 
