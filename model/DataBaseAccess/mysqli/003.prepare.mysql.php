@@ -15,5 +15,3 @@ $query = $mysqli->prepare('SELECT * FROM alunos WHERE id = ? ');
 $query->bind_param('i', 1);
 
 $result = $query->execute();
-
-?>

@@ -56,4 +56,3 @@ $result->close();
 echo "<pre>";
 print_r($array);
 echo "</pre>";
-?>

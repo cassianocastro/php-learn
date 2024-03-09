@@ -71,5 +71,3 @@ class DStMySQLi extends DbSingleton
         }
     }
 }
-
-?>
