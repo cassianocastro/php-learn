@@ -6,7 +6,7 @@ try
 }
 catch ( PDOException $e )
 {
-    die('Connection Error: (' . $e->getMessage() . ')');
+    die("Connection Error: ({$e->getMessage()})");
 }
 
 $params = [ ':id' => 1 ];
