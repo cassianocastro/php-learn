@@ -7,20 +7,20 @@ define("DB_NAME","t308");
 abstract class DbSingleton
 {
 
-    protected static $host   = DB_HOST;
-    protected static $user   = DB_USER;
-    protected static $pass   = DB_PASS;
-    protected static $dbname = DB_NAME;
-    protected static $instance = array();
+    static protected $host   = DB_HOST;
+    static protected $user   = DB_USER;
+    static protected $pass   = DB_PASS;
+    static protected $dbname = DB_NAME;
+    static protected $instance = array();
 
     private function __construct()
     {
 
     }
 
-    protected abstract static function connect();
+    static abstract protected function connect();
 
-    public static function getInstance()
+    static public function getInstance()
     {
         echo __METHOD__, get_called_class(), PHP_EOL;
 
@@ -38,7 +38,7 @@ abstract class DbSingleton
 class DStPDO extends DbSingleton
 {
 
-    protected static function connect()
+    static protected function connect()
     {
         try
         {
@@ -59,7 +59,7 @@ class DStPDO extends DbSingleton
 class DStMySQLi extends DbSingleton
 {
 
-    protected static function connect()
+    static protected function connect()
     {
         try
         {
