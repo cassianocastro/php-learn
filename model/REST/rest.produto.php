@@ -12,8 +12,7 @@ try
 		switch ( $method_name )
         {
 			case 'GET':
-				$qry    = "SELECT * from produto";
-				$result = mysqli_query($conn, $qry);
+				$result = mysqli_query($conn, "SELECT * from produto");
 
 				while ( $row = mysqli_fetch_row($result) )
                 {
@@ -32,12 +31,21 @@ try
                 ];
 			    break;
 			case 'POST':
-				$name  = $_REQUEST['produto_nome'];
-				$price = $_REQUEST['produto_preco'];
-				$qty   = $_REQUEST['produto_qtd'];
-				$qry   = "INSERT INTO produto(produto_nome, produto_preco, produto_qtd) VALUES ({$name}, {$price}, {$qty})";
+				$name   = $_REQUEST['produto_nome'];
+				$price  = $_REQUEST['produto_preco'];
+				$qty    = $_REQUEST['produto_qtd'];
 
-				if ( mysqli_query($conn, $qry) )
+                $sucess = mysqli_query(
+                    $conn,
+                    <<<SQL
+                        INSERT INTO
+                            produto(produto_nome, produto_preco, produto_qtd)
+                        VALUES
+                            ($name, $price, $qty)
+                    SQL
+                );
+
+				if ( $sucess )
                 {
 					$data = [
 						"status"  => "1",
@@ -59,9 +67,20 @@ try
 				$name  = $_REQUEST['produto_nome'];
 				$price = $_REQUEST['produto_preco'];
 				$qty   = $_REQUEST['produto_qtd'];
-				$qry   = "UPDATE produto SET produto_nome = {$name}, produto_preco = {$price}, produto_qtd = {$qty} WHERE produto_id = {$id}";
 
-				if ( mysqli_query($conn, $qry) )
+				$success = mysqli_query(
+                    $conn,
+                    <<<SQL
+                        UPDATE
+                            produto
+                        SET
+                            produto_nome = $name, produto_preco = $price, produto_qtd = $qty
+                        WHERE
+                            produto_id = $id
+                    SQL
+                );
+
+				if ( $success )
                 {
 					$data = [
 						"status"  => "1",
@@ -79,10 +98,14 @@ try
                 }
 			    break;
 			case 'DELETE':
-				$id  = $_REQUEST['produto_id'];
-				$qry = "DELETE FROM produto WHERE produto_id = {$id}";
+				$id = $_REQUEST['produto_id'];
 
-				if ( mysqli_query($conn, $qry) )
+                $success = mysqli_query(
+                    $conn,
+                    "DELETE FROM produto WHERE produto_id = {$id}"
+                );
+
+				if ( $success )
                 {
 					$data = [
 						"status"  => "1",
