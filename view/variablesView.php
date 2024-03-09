@@ -82,7 +82,7 @@
         $a = 10;
         $b = 20;
         $x = 4;
-        $z = calcula_glolal($x);
+        $z = calcula_global($x);
         echo "<p>Escopo global: <br>",
         "calcula_global ( a: $a ) ( b: $b ) ( x: $x ) ( z: $z )</p>";
         // resultado ( 4 ) ( 3 ) ( 7 )
