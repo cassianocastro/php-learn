@@ -233,5 +233,3 @@ class ChildObject2 extends SimpleObject
 {
 
 }
-
-?>
