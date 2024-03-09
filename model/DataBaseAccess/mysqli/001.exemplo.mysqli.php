@@ -4,11 +4,7 @@ $mysqli = new mysqli('localhost', 'root', '', 't308');
 
 if ( $mysqli->connect_error )
 {
-    die(
-        'Connect Error ('
-        . $mysqli->connect_errno . ') '
-        . $mysqli->connect_error
-    );
+    die("Connect error({$mysqli->connect_errno}): {$mysqli->connect_error}");
 }
 
 echo "<h1>conectou com sucesso!</h1>";
@@ -17,7 +13,7 @@ $result = $mysqli->query('SELECT * FROM alunos');
 
 if ( $result )
 {
-    echo "<p> Linhas retornadas: " . $result->num_rows;
+    echo "<p> Linhas retornadas: {$result->num_rows}";
     echo "<table>
     <tr>
     <td>ID</td>
