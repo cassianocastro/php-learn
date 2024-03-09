@@ -17,19 +17,19 @@ try
 
 				while ( $row = mysqli_fetch_row($result) )
                 {
-					$temp_cat[] = array(
+					$temp_cat[] = [
 						"produto_id"    =>$row[0],
 						"produto_nome"  =>$row[1],
 						"produto_preco" =>$row[2],
 						"produto_qtd"   =>$row[3]
-					);
+                    ];
 				}
 
-				$data = array(
+				$data = [
 					"status"  => "1",
 					"message" => "success",
 					"result"  => $temp_cat
-				);
+                ];
 			    break;
 			case 'POST':
 				$name  = $_REQUEST['produto_nome'];
@@ -39,19 +39,19 @@ try
 
 				if ( mysqli_query($conn, $qry) )
                 {
-					$data = array(
+					$data = [
 						"status"  => "1",
 						"message" => "success",
 						"result"  => "produto add successfully"
-					);
+                    ];
                 }
 				else
                 {
-					$data = array(
+					$data = [
 						"status"  => "1",
 						"message" => "success",
 						"result"  => "Something wrong!!!"
-					);
+                    ];
                 }
 			    break;
 			case 'PUT':
@@ -63,19 +63,19 @@ try
 
 				if ( mysqli_query($conn, $qry) )
                 {
-					$data = array(
+					$data = [
 						"status"=>"1",
 						"message"=>"success",
 						"result"=>"produto Update successfully"
-					);
+                    ];
                 }
 				else
                 {
-					$data = array(
+					$data = [
 						"status"=>"1",
 						"message"=>"success",
 						"result"=>"Something wrong!!!"
-					);
+                    ];
                 }
 			    break;
 			case 'DELETE':
@@ -84,19 +84,19 @@ try
 
 				if ( mysqli_query($conn, $qry) )
                 {
-					$data = array(
+					$data = [
 						"status"=>"1",
 						"message"=>"success",
 						"result"=>"produto Update successfully"
-					);
+                    ];
                 }
 				else
                 {
-					$data = array(
+					$data = [
 						"status"=>"1",
 						"message"=>"success",
 						"result"=>"Something wrong!!!"
-					);
+                    ];
                 }
 			    break;
 		}
@@ -105,10 +105,10 @@ try
 	}
 	else
     {
-		$data=array(
+		$data = [
 			"status"  => "0",
 			"message" => "Please enter proper request method!!"
-		);
+        ];
 
 		echo json_encode($data);
 	}
