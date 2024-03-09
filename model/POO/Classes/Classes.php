@@ -4,6 +4,7 @@ class Pessoa
 {
     // Atributos da classe
     var $idade = 20;
+
     // Métodos da classe
     public function mostra(): void
     {
@@ -25,7 +26,6 @@ class ClasseExemplo
     {
         return $this->atributo;
     }
-
 }
 
 class Correntista
@@ -43,7 +43,6 @@ class Correntista
     {
         return "Correntista, $this->nome";
     }
-
 }
 
 class Conta
@@ -61,7 +60,6 @@ class Conta
     {
         return $this->titular->getNome();
     }
-
 }
 
 class MinhaClasse
@@ -116,9 +114,11 @@ class ClasseB extends ClasseA
     function __construct()
     {
         echo "Chamando o constructor da classe pai (forçado)", PHP_EOL;
+
         parent::__construct();
 
         echo "Constructor da Classe B", PHP_EOL;
+
         $this->atributoB = "B";
     }
 
@@ -127,13 +127,16 @@ class ClasseB extends ClasseA
         echo "Destructor da Classe B", PHP_EOL;
 
         echo "Chamando o destructor da classe pai (forçado)", PHP_EOL;
+
         parent::__destruct();
     }
 
     public function mostraB(): void
     {
         echo "Classe B - Chamando mostraAprotegida", PHP_EOL;
+
         $this->mostraAprotegida();
+
         echo "Classe B - mostraB - atributoB: $this->atributoB", PHP_EOL;
     }
 }
@@ -146,12 +149,15 @@ class ClasseC extends ClasseA
     function __construct()
     {
         echo "Escondendo o constructor da classe pai", PHP_EOL;
-        //parent::__construct(); //Chama o construtor da Superclasse
+
+        // parent::__construct(); // Chama o construtor da Superclasse
+
         echo "Constructor da Classe C", PHP_EOL;
+
         $this->atributoC = "Y";
     }
 
-    //como não reescreveu destructor assume da pai
+    // como não reescreveu destructor assume da pai
 }
 
 class ClasseD extends ClasseA
@@ -161,6 +167,7 @@ class ClasseD extends ClasseA
 
 class SimpleObject
 {
+
     private static $_instanceCount  = 0;
     private static $_instancesArray = array();
     private $_instanceId;
@@ -170,6 +177,7 @@ class SimpleObject
     {
         $this->_instanceId   = self::$_instanceCount++;
         $this->_instanceGUID = self::createInstanceGUID();
+
         self::$_instancesArray[$this->_instanceGUID] = &$this;
     }
 
@@ -180,8 +188,11 @@ class SimpleObject
 
     public static function getInstance($guid)
     {
-        if (array_key_exists($guid, self::$_instancesArray))
+        if ( array_key_exists($guid, self::$_instancesArray) )
+        {
             return self::$_instancesArray[$guid];
+        }
+
         return null;
     }
 
@@ -212,15 +223,16 @@ class SimpleObject
 
     private static function createInstanceGUID()
     {
-        if (function_exists('com_create_guid'))
+        if ( function_exists('com_create_guid') )
+        {
             return trim(com_create_guid(), '{}');
+        }
 
         $data    = openssl_random_pseudo_bytes(16);
         $data[6] = chr(ord($data[6]) & 0x0f | 0x40);
         $data[8] = chr(ord($data[8]) & 0x3f | 0x80);
-        return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
-        //}
 
+        return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
     }
 }
 
