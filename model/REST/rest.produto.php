@@ -1,7 +1,7 @@
 <?php
 try
 {
-	include 'connection.php';
+	require_once __DIR__ . '/connection.php';
 
 	$method_name = $_SERVER["REQUEST_METHOD"];
 
