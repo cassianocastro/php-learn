@@ -1,13 +1,22 @@
 <?php
-//namespace Interfaces;
+// namespace Interfaces;
 
+/**
+ *
+ */
 interface iTemplate
 {
+
     public function setVariable($name, $var);
-    public function getHtml($template) : string;
+
+    public function getHtml($template): string;
 }
 
+/**
+ *
+ */
 interface iHTMLElement
 {
-    public function render() : string;
+
+    public function render(): string;
 }
