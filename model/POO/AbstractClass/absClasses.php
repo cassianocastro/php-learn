@@ -6,6 +6,7 @@ abstract class ClasseAbstrata
     // Força a classe que estender ClasseAbstrata
     // a definir esses métodos
     abstract protected function pegarValor(): string;
+
     abstract protected function valorComPrefixo($prefixo): string;
 
     // Método comum que pode ser implementado
@@ -27,10 +28,13 @@ abstract class HTMLElement
 
     protected function is_element($v): bool
     {
-        if (is_object($v)) {
+        if ( is_object($v) )
+        {
             $r = new ReflectionClass(get_class($v));
+
             return $r->isSubclassOf('HTMLElement');
         }
+
         return false;
     }
 
