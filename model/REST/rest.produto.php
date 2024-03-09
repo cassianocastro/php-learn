@@ -18,10 +18,10 @@ try
 				while ( $row = mysqli_fetch_row($result) )
                 {
 					$temp_cat[] = [
-						"produto_id"    =>$row[0],
-						"produto_nome"  =>$row[1],
-						"produto_preco" =>$row[2],
-						"produto_qtd"   =>$row[3]
+						"produto_id"    => $row[0],
+						"produto_nome"  => $row[1],
+						"produto_preco" => $row[2],
+						"produto_qtd"   => $row[3]
                     ];
 				}
 
@@ -35,7 +35,7 @@ try
 				$name  = $_REQUEST['produto_nome'];
 				$price = $_REQUEST['produto_preco'];
 				$qty   = $_REQUEST['produto_qtd'];
-				$qry   = "INSERT INTO produto(produto_nome,produto_preco,produto_qtd) values('$name','$price','$qty')";
+				$qry   = "INSERT INTO produto(produto_nome, produto_preco, produto_qtd) VALUES ({$name}, {$price}, {$qty})";
 
 				if ( mysqli_query($conn, $qry) )
                 {
@@ -59,7 +59,7 @@ try
 				$name  = $_REQUEST['produto_nome'];
 				$price = $_REQUEST['produto_preco'];
 				$qty   = $_REQUEST['produto_qtd'];
-				$qry   = "UPDATE produto SET produto_nome='".$name."', produto_preco='".$price."',produto_qtd='".$qty."' where produto_id='".$id."' ";
+				$qry   = "UPDATE produto SET produto_nome = {$name}, produto_preco = {$price}, produto_qtd = {$qty} WHERE produto_id = {$id}";
 
 				if ( mysqli_query($conn, $qry) )
                 {
@@ -80,7 +80,7 @@ try
 			    break;
 			case 'DELETE':
 				$id  = $_REQUEST['produto_id'];
-				$qry = "delete from produto where produto_id='".$id."'";
+				$qry = "DELETE FROM produto WHERE produto_id = {$id}";
 
 				if ( mysqli_query($conn, $qry) )
                 {
