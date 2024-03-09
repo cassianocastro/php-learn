@@ -4,6 +4,9 @@
 // use Interfaces\iTemplate;
 // use AbstractClass\{ ClasseAbstrata, HTMLElement, HTMLBinaryElement };
 
+/**
+ *
+ */
 class ClasseConcreta1 extends ClasseAbstrata
 {
 
@@ -18,6 +21,9 @@ class ClasseConcreta1 extends ClasseAbstrata
     }
 }
 
+/**
+ *
+ */
 class ClasseConcreta2 extends ClasseAbstrata
 {
 
@@ -32,6 +38,9 @@ class ClasseConcreta2 extends ClasseAbstrata
     }
 }
 
+/**
+ *
+ */
 class HTMLTextElement extends HTMLElement
 {
 
@@ -46,6 +55,9 @@ class HTMLTextElement extends HTMLElement
     }
 }
 
+/**
+ *
+ */
 class HTMLUnaryElement extends HTMLElement
 {
 
@@ -60,6 +72,9 @@ class HTMLUnaryElement extends HTMLElement
     }
 }
 
+/**
+ *
+ */
 class HTMLBinaryElement extends HTMLElement
 {
 
@@ -123,6 +138,9 @@ class HTMLBinaryElement extends HTMLElement
     }
 }
 
+/**
+ *
+ */
 class HTMLLinkElement extends HTMLBinaryElement
 {
 
@@ -136,6 +154,9 @@ class HTMLLinkElement extends HTMLBinaryElement
     }
 }
 
+/**
+ *
+ */
 class Template implements iTemplate
 {
 
@@ -162,8 +183,14 @@ class Template implements iTemplate
     }
 }
 
+/**
+ *
+ */
 class MyException extends Exception {}
 
+/**
+ *
+ */
 class Test
 {
 
