@@ -1,8 +1,9 @@
 <?php
 
-$mysqli = new mysqli('localhost','root','','t308');
+$mysqli = new mysqli('localhost', 'root', '', 't308');
 
-if ($mysqli->connect_error) {
+if ( $mysqli->connect_error )
+{
     die(
         'Connection Error ('
         . $mysqli->connect_errno . ') '
