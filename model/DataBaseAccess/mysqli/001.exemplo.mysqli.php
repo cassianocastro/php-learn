@@ -26,7 +26,7 @@ if ($result) {
     <td>ID</td>
     <td>NOME</td>
     </tr>";
-    
+
     while ($linha = $result->fetch_assoc()) {
         echo "<tr>
         <td>$linha[id]</td>
