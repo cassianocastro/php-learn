@@ -19,9 +19,10 @@
         echo "You are " . (int) $_POST['age'] . " years old.";
       }
 
-      if (isset($_POST["action"])) {
+      if ( isset($_POST["action"]) )
+      {
         print_r($_POST);
-        //clicked();
+        // clicked();
         $_POST["action"]();
       }
       ?>
