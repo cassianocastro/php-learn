@@ -15,7 +15,7 @@ catch ( PDOException $e )
 $result = $pdo->query('SELECT * FROM alunos');
 
 if ( $result ): ?>
-    <p>Linhas retornadas: <?= $result->rowCount() ?></p>
+    <p>Linhas retornadas: <?php $result->rowCount() ?></p>
 
     <table>
         <thead>
@@ -25,12 +25,12 @@ if ( $result ): ?>
             </tr>
         </thead>
         <tbody>
-            <?= while ( $linha = $result->fetch(PDO::FETCH_ASSOC) ): ?>
+            <?php while ( $linha = $result->fetch(PDO::FETCH_ASSOC) ): ?>
                 <tr>
                     <td><?= $linha["id"] ?></td>
                     <td><?= $linha["nome"] ?></td>
                 </tr>
-            <?= endwhile; ?>
+            <?php endwhile; ?>
         </tbody>
     </table>
-<?= endif; ?>
+<?php endif; ?>
