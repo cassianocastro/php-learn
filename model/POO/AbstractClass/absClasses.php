@@ -1,21 +1,31 @@
 <?php
-//namespace AbstractClass;
+// namespace AbstractClass;
 
+/**
+ *
+ */
 abstract class ClasseAbstrata
 {
-    // Força a classe que estender ClasseAbstrata
-    // a definir esses métodos
+
+    /**
+     * Força a classe que estender ClasseAbstrata a definir esses métodos
+     */
     abstract protected function pegarValor(): string;
 
     abstract protected function valorComPrefixo($prefixo): string;
 
-    // Método comum que pode ser implementado
+    /**
+     * Método comum que pode ser implementado
+     */
     public function imprimir(): void
     {
         print $this->pegarValor();
     }
 }
 
+/**
+ *
+ */
 abstract class HTMLElement
 {
 
