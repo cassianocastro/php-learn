@@ -1,5 +1,4 @@
 <?php
-
 define("DB_USER","root");
 define("DB_PASS","");
 define("DB_HOST","localhost");
@@ -24,15 +23,16 @@ abstract class DbSingleton
     public static function getInstance()
     {
         echo __METHOD__, get_called_class(), PHP_EOL;
-        if ( ! isset(self::$instance[get_called_class()]))
+
+        if ( ! isset(self::$instance[get_called_class()]) )
         {
             echo "Criou nova instancia", PHP_EOL;
+
             self::$instance[get_called_class()] = static::connect();
         }
 
         return self::$instance[get_called_class()];
     }
-
 }
 
 class DStPDO extends DbSingleton
@@ -40,15 +40,17 @@ class DStPDO extends DbSingleton
 
     protected static function connect()
     {
-        try {
+        try
+        {
             return new PDO(
-                "mysql:host=" . static::$host .
-                ";dbname=" . static::$dbname,
+                "mysql:host=" . static::$host . ";dbname=" . static::$dbname,
                 static::$user,
                 static::$pass,
                 array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'")
             );
-        } catch (Exception $e) {
+        }
+        catch ( Exception $e )
+        {
             die($e->getMessage());
         }
     }
@@ -59,14 +61,17 @@ class DStMySQLi extends DbSingleton
 
     protected static function connect()
     {
-        try {
+        try
+        {
             return new mysqli(
                 static::$host,
                 static::$user,
                 static::$pass,
                 static::$dbname
             );
-        } catch (Exception $e) {
+        }
+        catch ( Exception $e )
+        {
             die($e->getMessage());
         }
     }
