@@ -81,5 +81,3 @@ function operaClasseAbstrata(ClasseAbstrata $c)
 {
     echo "operaClasseAbstrata: ", get_class($c), PHP_EOL;
 }
-
-?>
