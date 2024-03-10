@@ -40,7 +40,7 @@
           <?php
           print "Array de Objetos:<br>";
 
-          $pessoas = array();
+          $pessoas = [];
           $pessoas[0] = new Pessoa();
           $pessoas[0]->idade = 18;
           $pessoas[1] = new Pessoa();
