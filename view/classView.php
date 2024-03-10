@@ -148,7 +148,7 @@
           $y  = $o2->getInstanceGUID();
           $instanceCount = SimpleObject::getInstanceCount();
           echo <<<HTML
-            <table border="1">
+            <table>
               <thead>
                 <tr>
                   <th>ID</th>
