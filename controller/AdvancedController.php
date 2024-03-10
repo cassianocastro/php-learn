@@ -1,179 +1,197 @@
 <?php
 
-// Section: Type-Hinting
-
-ini_set("display_errors", true);
-error_reporting(E_ALL);
 require_once '../model/Functions/functions.php';
-echo "<br>Teste Mixed:", PHP_EOL;
-teste(true);
-teste(false);
-
-teste("abc");
-teste("");
-
-teste(0);
-teste(1);
-
-teste(1);
-teste(0);
-
-teste("1");
-//teste("teste");
-?>
-
-<?php
-
-// Section: Exceptions
-
 require_once '../model/POO/AbstractClass/absClasses.php';
 require_once '../model/POO/Interfaces/interfaces.php';
 require_once '../model/POO/ConcreteClass/concreteClasses.php';
 
-echo "<h4>Exceção Simples</h4>";
-try
+/**
+ * Section: Type-Hinting
+ */
+function typeHinting(): void
 {
-    $first  = inverse(5);
-    $second = inverse(0);
-    $third  = inverse(3);
+    ini_set("display_errors", true);
+    error_reporting(E_ALL);
+
+    echo "<br>Teste Mixed:", PHP_EOL;
+    teste(true);
+    teste(false);
+
+    teste("abc");
+    teste("");
+
+    teste(0);
+    teste(1);
+
+    teste(1);
+    teste(0);
+
+    teste("1");
+    // teste("teste");
 }
-catch ( Exception $e )
+
+/**
+ * Section: Exceptions
+ */
+function exceptions(): void
 {
-    echo "Exceção capturada: ", $e->getMessage(),
-    "\nLinha: ", $e->getLine(), PHP_EOL;
-}
-finally
-{
-    echo "Finally.\n";
-}
+    echo "<h4>Exceção Simples</h4>";
 
-echo "<h4>Exceção Customizada</h4>";
-$foo = new Test();
-$foo->testing();
-?>
-
-<?php
-
-// Section: Funções Anônimas
-
-print "<br>Resultados:<br>";
-$a = array(1, 5, 10, 23);
-$imploded = implode(", ", $a);
-
-echo
-    "duplica($imploded): ",  operacao($a, $duplica),   PHP_EOL,
-    "quadrado($imploded): ", operacao($a, "quadrado"), PHP_EOL,
-    "triplica($imploded): ",
-    operacao($a, function ($v) {
-        return $v * 3;
-    });
-?>
-
-<?php
-
-// Section: Classes Anônimas
-
-echo "<br>";
-$obj1 = new class()
-{
-
-    public function __construct()
+    try
     {
-        echo "Constructor da classe anônima #1!<br>";
+        $first  = inverse(5);
+        $second = inverse(0);
+        $third  = inverse(3);
+    }
+    catch ( Exception $e )
+    {
+        echo "Exceção capturada: ", $e->getMessage(),
+        "\nLinha: ", $e->getLine(), PHP_EOL;
+    }
+    finally
+    {
+        echo "Finally.\n";
     }
 
-    public function print(): void
-    {
-        echo "Método da classe anônima #1!<br>";
-    }
-};
+    echo "<h4>Exceção Customizada</h4>";
 
-$obj1->print();
-
-function fazAlgo(object $c): void
-{
-    $c->print();
-    //echo get_class($c);
+    $foo = new Test();
+    $foo->testing();
 }
 
-fazAlgo($obj1);
+/**
+ * Section: Funções Anônimas
+ */
+function anonymousFunctions(): void
+{
+    global $duplica;
 
-fazAlgo(
-    new class()
+    print "<br>Resultados:<br>";
+
+    $a = array(1, 5, 10, 23);
+    $imploded = implode(", ", $a);
+
+    echo
+        "duplica($imploded): ",  operacao($a, $duplica),   PHP_EOL,
+        "quadrado($imploded): ", operacao($a, "quadrado"), PHP_EOL,
+        "triplica($imploded): ",
+        operacao($a, function ($v) {
+            return $v * 3;
+        });
+}
+
+/**
+ * Section: Classes Anônimas
+ */
+function anonymousClasses(): void
+{
+    echo "<br>";
+    $obj1 = new class()
     {
+
+        public function __construct()
+        {
+            echo "Constructor da classe anônima #1!<br>";
+        }
 
         public function print(): void
         {
-            echo "Método da classe anônima #2!<br>";
+            echo "Método da classe anônima #1!<br>";
         }
+    };
+
+    $obj1->print();
+
+    function fazAlgo(object $c): void
+    {
+        $c->print();
+        //echo get_class($c);
     }
-);
-?>
 
-<?php
+    fazAlgo($obj1);
 
-// Section: Classes Abstratas
+    fazAlgo(
+        new class()
+        {
 
-echo "<br>";
-$classe1 = new ClasseConcreta1();
-$classe1->imprimir();
-echo $classe1->valorComPrefixo('FOO1_'), PHP_EOL;
+            public function print(): void
+            {
+                echo "Método da classe anônima #2!<br>";
+            }
+        }
+    );
+}
 
-$classe2 = new ClasseConcreta2();
-$classe2->imprimir();
-echo $classe2->valorComPrefixo('FOO2_'), PHP_EOL;
+/**
+ * Section: Classes Abstratas
+ */
+function abstractClasses(): void
+{
+    echo "<br>";
 
-operaClasseAbstrata($classe1);
-operaClasseAbstrata($classe2);
-?>
+    $classe1 = new ClasseConcreta1();
+    $classe1->imprimir();
 
-<?php
+    echo $classe1->valorComPrefixo('FOO1_'), PHP_EOL;
 
-// Section: Interfaces
+    $classe2 = new ClasseConcreta2();
+    $classe2->imprimir();
 
-$arquivo = "<section><h4>{titulo}</h4><p>Outra variavel: {nome}</p></section>";
+    echo $classe2->valorComPrefixo('FOO2_'), PHP_EOL;
 
-$t = new Template();
-$t->setVariable("titulo", "Titulo legal");
-$t->setVariable("nome", "Meu nome");
+    operaClasseAbstrata($classe1);
+    operaClasseAbstrata($classe2);
+}
 
-echo $t->getHtml($arquivo);
-?>
+/**
+ * Section: Interfaces
+ */
+function interfaces(): void
+{
+    $arquivo = "<section><h4>{titulo}</h4><p>Outra variavel: {nome}</p></section>";
 
-<?php
+    $t = new Template();
+    $t->setVariable("titulo", "Titulo legal");
+    $t->setVariable("nome", "Meu nome");
 
-// Section: HTML
+    echo $t->getHtml($arquivo);
+}
 
-$txt = new HTMLTextElement("teste");
-$h1  = new HTMLBinaryElement("h1", $txt);
+/**
+ * Section: HTML
+ */
+function html(): void
+{
+    $txt = new HTMLTextElement("teste");
+    $h1  = new HTMLBinaryElement("h1", $txt);
 
-echo $h1->render();
+    echo $h1->render();
 
-$x = new HTMLBinaryElement(
-    "table",
-    [
-    new HTMLBinaryElement(
-        "tr",
+    $x = new HTMLBinaryElement(
+        "table",
         [
-            new HTMLBinaryElement("td", new HTMLTextElement("coluna1")),
-            new HTMLBinaryElement("td", new HTMLTextElement("coluna2")),
-            new HTMLBinaryElement("td", new HTMLTextElement("coluna3"))
+        new HTMLBinaryElement(
+            "tr",
+            [
+                new HTMLBinaryElement("td", new HTMLTextElement("coluna1")),
+                new HTMLBinaryElement("td", new HTMLTextElement("coluna2")),
+                new HTMLBinaryElement("td", new HTMLTextElement("coluna3"))
+            ]
+        ),
+        new HTMLBinaryElement(
+            "tr",
+            [
+                new HTMLBinaryElement("td", new HTMLTextElement("coluna1")),
+                new HTMLBinaryElement("td", new HTMLTextElement("coluna2")),
+                new HTMLBinaryElement("td", new HTMLTextElement("coluna3"))
+            ]
+        )
         ]
-    ),
-    new HTMLBinaryElement(
-        "tr",
-        [
-            new HTMLBinaryElement("td", new HTMLTextElement("coluna1")),
-            new HTMLBinaryElement("td", new HTMLTextElement("coluna2")),
-            new HTMLBinaryElement("td", new HTMLTextElement("coluna3"))
-        ]
-    )
-    ]
-);
+    );
 
-echo $x->render();
+    echo $x->render();
 
-$p = new HTMLBinaryElement("p", new HTMLTextElement("Olá Mundo"));
+    $p = new HTMLBinaryElement("p", new HTMLTextElement("Olá Mundo"));
 
-echo $p->render();
-?>
+    echo $p->render();
+}
