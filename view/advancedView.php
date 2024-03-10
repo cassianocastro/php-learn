@@ -13,79 +13,127 @@
   </header>
 
   <main>
-    <article>
-      <header>
-        <h2>Header Article</h2>
-      </header>
+    <div>
 
-      <section>
-        <h3>Type-Hinting</h3>
+      <article>
+        <header>
+          <div>
+            <h2>Header Article</h2>
+          </div>
+        </header>
 
-        <pre>
-          <?= typeHinting() ?>
-        </pre>
-      </section>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Type-Hinting</h3>
+              </div>
+            </header>
 
-      <hr>
+            <pre>
+              <?= typeHinting() ?>
+            </pre>
+          </div>
+        </section>
 
-      <section>
-        <h3>Exceções</h3>
+        <hr>
 
-        <pre>
-          <?= exceptions() ?>
-        </pre>
-      </section>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Exceções</h3>
+              </div>
+            </header>
 
-      <hr>
+            <pre>
+              <?= exceptions() ?>
+            </pre>
+          </div>
+        </section>
 
-      <section>
-        <h3>Funções Anônimas</h3>
+        <hr>
 
-        <pre>
-          <?= anonymousFunctions() ?>
-        </pre>
-      </section>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Funções Anônimas</h3>
+              </div>
+            </header>
 
-      <hr>
+            <pre>
+              <?= anonymousFunctions() ?>
+            </pre>
+          </div>
+        </section>
 
-      <section>
-        <h3>Classes Anônimas</h3>
+        <hr>
 
-        <pre>
-          <?= anonymousClasses() ?>
-        </pre>
-      </section>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Classes Anônimas</h3>
+              </div>
+            </header>
 
-      <hr>
+            <pre>
+              <?= anonymousClasses() ?>
+            </pre>
+          </div>
+        </section>
 
-      <section>
-        <h3>Classes Abstratas</h3>
+        <hr>
 
-        <pre>
-          <?= abstractClasses() ?>
-        </pre>
-      </section>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Classes Abstratas</h3>
+              </div>
+            </header>
 
-      <hr>
+            <pre>
+              <?= abstractClasses() ?>
+            </pre>
+          </div>
+        </section>
 
-      <section>
-        <h3>Interfaces</h3>
+        <hr>
 
-        <pre>
-          <?= interfaces() ?>
-        </pre>
-      </section>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Interfaces</h3>
+              </div>
+            </header>
 
-      <hr>
+            <pre>
+              <?= interfaces() ?>
+            </pre>
+          </div>
+        </section>
 
-      <section>
-        <h3>HTML</h3>
+        <hr>
 
-        <pre>
-          <?= html() ?>
-        </pre>
-      </section>
-    </article>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>HTML</h3>
+              </div>
+            </header>
+
+            <pre>
+              <?= html() ?>
+            </pre>
+          </div>
+        </section>
+      </article>
+
+    </div>
   </main>
 </body>
 </html>

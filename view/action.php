@@ -7,9 +7,11 @@
 </head>
 <body>
   <main>
-    <pre>
-      <?php require_once __DIR__ . '/../controller/ActionController.php'; ?>
-    </pre>
+    <div>
+      <pre>
+        <?php require_once __DIR__ . '/../controller/ActionController.php'; ?>
+      </pre>
+    </div>
   </main>
 </body>
 </html>

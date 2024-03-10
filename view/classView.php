@@ -13,77 +13,127 @@
   </header>
 
   <main>
-    <article>
-      <header>
-        <h2>Trabalhando com Classes em PHP</h2>
-      </header>
+    <div>
 
-      <section>
-        <pre>
-          <?= workWithClasses() ?>
-        </pre>
-      </section>
+      <article>
+        <header>
+          <div>
+            <h2>Trabalhando com Classes em PHP</h2>
+          </div>
+        </header>
 
-      <hr>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h2>Trabalhando com Classes em PHP</h2>
+              </div>
+            </header>
 
-      <section>
-        <h3>Criando Array de Objetos</h3>
+            <pre>
+              <?= workWithClasses() ?>
+            </pre>
+          </div>
+        </section>
 
-        <pre>
-          <?= createArrayOfObjects() ?>
-        </pre>
-      </section>
+        <hr>
 
-      <hr>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Criando Array de Objetos</h3>
+              </div>
+            </header>
 
-      <section>
-        <h3>Encapsulamento</h3>
+            <pre>
+              <?= createArrayOfObjects() ?>
+            </pre>
+          </div>
+        </section>
 
-        <pre>
-          <?= encapsulating() ?>
-        </pre>
-      </section>
+        <hr>
 
-      <hr>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Encapsulamento</h3>
+              </div>
+            </header>
 
-      <section>
-        <h3>Classes aninhadas</h3>
+            <pre>
+              <?= encapsulating() ?>
+            </pre>
+          </div>
+        </section>
 
-        <pre>
-          <?= classesAninhadas() ?>
-        </pre>
-      </section>
+        <hr>
 
-      <hr>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Classes aninhadas</h3>
+              </div>
+            </header>
 
-      <section>
-        <h3>Constructors e destructors</h3>
+            <pre>
+              <?= classesAninhadas() ?>
+            </pre>
+          </div>
+        </section>
 
-        <pre>
-          <?= constructorsAndDestructors() ?>
-        </pre>
-      </section>
+        <hr>
 
-      <hr>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Constructors e destructors</h3>
+              </div>
+            </header>
 
-      <section>
-        <h3>Herança: Reescrita de constructors e destructors</h3>
+            <pre>
+              <?= constructorsAndDestructors() ?>
+            </pre>
+          </div>
+        </section>
 
-        <pre>
-          <?= rewriteContructors() ?>
-        </pre>
-      </section>
+        <hr>
 
-      <hr>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Herança: Reescrita de constructors e destructors</h3>
+              </div>
+            </header>
 
-      <section>
-        <h3>Herança Complexa: Controle de instâncias</h3>
+            <pre>
+              <?= rewriteContructors() ?>
+            </pre>
+          </div>
+        </section>
 
-        <pre>
-          <?= instancesControl() ?>
-        </pre>
-      </section>
-    </article>
+        <hr>
+
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Herança Complexa: Controle de instâncias</h3>
+              </div>
+            </header>
+
+            <pre>
+              <?= instancesControl() ?>
+            </pre>
+          </div>
+        </section>
+      </article>
+
+    </div>
   </main>
 </body>
 </html>
