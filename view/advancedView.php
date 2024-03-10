@@ -55,14 +55,19 @@
           require_once '../model/POO/ConcreteClass/concreteClasses.php';
 
           echo "<h4>Exceção Simples</h4>";
-          try {
+          try
+          {
             $first  = inverse(5);
             $second = inverse(0);
             $third  = inverse(3);
-          } catch (Exception $e) {
+          }
+          catch ( Exception $e )
+          {
             echo "Exceção capturada: ", $e->getMessage(),
             "\nLinha: ", $e->getLine(), PHP_EOL;
-          } finally {
+          }
+          finally
+          {
             echo "Finally.\n";
           }
 
@@ -127,14 +132,16 @@
 
           fazAlgo($obj1);
 
-          fazAlgo(new class()
-          {
-
-            public function print(): void
+          fazAlgo(
+            new class()
             {
-              echo "Método da classe anônima #2!<br>";
+
+              public function print(): void
+              {
+                echo "Método da classe anônima #2!<br>";
+              }
             }
-          });
+          );
           ?>
         </pre>
       </section>
@@ -169,9 +176,11 @@
         <pre>
           <?php
           $arquivo = "<section><h4>{titulo}</h4><p>Outra variavel: {nome}</p></section>";
+
           $t = new Template();
           $t->setVariable("titulo", "Titulo legal");
           $t->setVariable("nome", "Meu nome");
+
           echo $t->getHtml($arquivo);
           ?>
         </pre>
@@ -186,6 +195,7 @@
           <?php
           $txt = new HTMLTextElement("teste");
           $h1  = new HTMLBinaryElement("h1", $txt);
+
           echo $h1->render();
 
           $x = new HTMLBinaryElement(
@@ -211,7 +221,9 @@
           );
 
           echo $x->render();
+
           $p = new HTMLBinaryElement("p", new HTMLTextElement("Olá Mundo"));
+
           echo $p->render();
           ?>
         </pre>
