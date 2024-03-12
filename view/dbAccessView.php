@@ -13,49 +13,79 @@
   </header>
 
   <main>
-    <article>
-      <header>
-        <h2>Teste Conexão</h2>
-      </header>
+    <div>
 
-      <section>
-        <h3>Testando MySQLi</h3>
+      <article>
+        <header>
+          <div>
+            <h2>Teste Conexão</h2>
+          </div>
+        </header>
 
-        <pre>
-          <?= testMySQLi() ?>
-        </pre>
-      </section>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Testando MySQLi</h3>
+              </div>
+            </header>
 
-      <hr>
+            <pre>
+              <?= testMySQLi() ?>
+            </pre>
+          </div>
+        </section>
 
-      <section>
-        <h3>Testando PDO</h3>
+        <hr>
 
-        <pre>
-          <?= testPDO() ?>
-        </pre>
-      </section>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Testando PDO</h3>
+              </div>
+            </header>
 
-      <hr>
+            <pre>
+              <?= testPDO() ?>
+            </pre>
+          </div>
+        </section>
 
-      <section>
-        <h3>Testando MySQLi #2</h3>
+        <hr>
 
-        <pre>
-          <?= testMySQLi2() ?>
-        </pre>
-      </section>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Testando MySQLi #2</h3>
+              </div>
+            </header>
 
-      <hr>
+            <pre>
+              <?= testMySQLi2() ?>
+            </pre>
+          </div>
+        </section>
 
-      <section>
-        <h3>Testando PDO #2</h3>
+        <hr>
 
-        <pre>
-          <?= testPDO2() ?>
-        </pre>
-      </section>
-    </article>
+        <section>
+          <div>
+            <header>
+              <div>
+                <h3>Testando PDO #2</h3>
+              </div>
+            </header>
+
+            <pre>
+              <?= testPDO2() ?>
+            </pre>
+          </div>
+        </section>
+      </article>
+
+    </div>
   </main>
 </body>
 </html>
