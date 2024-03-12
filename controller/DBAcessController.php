@@ -1,55 +1,64 @@
 <?php
-// Section: Testando MySQLi
-
 require_once "../model/DataBaseAccess/005.class.db.singleton.php";
 
-var_dump(DStMySQLi::getInstance());
+/**
+ * Section: Testando MySQLi
+ */
+function testMySQLi(): void
+{
+    var_dump(DStMySQLi::getInstance());
 
-$dbm2 = DStMySQLi::getInstance();
-$resultm = $dbm2->query("SELECT * FROM usuario");
+    $dbm2 = DStMySQLi::getInstance();
+    $resultm = $dbm2->query("SELECT * FROM usuario");
 
-var_dump($resultm);
-?>
+    var_dump($resultm);
+}
 
-<?php
-// Section: Testando PDO
+/**
+ * Section: Testando PDO
+ */
+function testPDO(): void
+{
+    $dbp = DStPDO::getInstance();
 
-$dbp = DStPDO::getInstance();
+    var_dump($dbp);
 
-var_dump($dbp);
+    $dbp2 = DStPDO::getInstance();
+    $resultp = $dbp2->query('SELECT * FROM usuario');
 
-$dbp2 = DStPDO::getInstance();
-$resultp = $dbp2->query('SELECT * FROM usuario');
+    var_dump($resultp);
 
-var_dump($resultp);
+    echo $resultp->rowCount();
+}
 
-echo $resultp->rowCount();
-?>
+/**
+ * Section: Testando MySQLi #2
+ */
+function testMySQLi2(): void
+{
+    $dbm = DStMySQLi::getInstance();
 
-<?php
-// Section: Testando MySQLi #2
+    var_dump($dbm);
 
-$dbm = DStMySQLi::getInstance();
+    $dbm2 = DStMySQLi::getInstance();
+    $resultm = $dbm2->query('SELECT * FROM usuario');
 
-var_dump($dbm);
+    var_dump($resultm);
+}
 
-$dbm2 = DStMySQLi::getInstance();
-$resultm = $dbm2->query('SELECT * FROM usuario');
+/**
+ * Section: Testando PDO #2
+ */
+function testPDO2(): void
+{
+    $dbp = DStPDO::getInstance();
 
-var_dump($resultm);
-?>
+    var_dump($dbp);
 
-<?php
-// Section: Testando PDO #2
+    $dbp2 = DStPDO::getInstance();
+    $resultp = $dbp2->query('SELECT * FROM usuario');
 
-$dbp = DStPDO::getInstance();
+    var_dump($resultp);
 
-var_dump($dbp);
-
-$dbp2 = DStPDO::getInstance();
-$resultp = $dbp2->query('SELECT * FROM usuario');
-
-var_dump($resultp);
-
-echo $resultp->rowCount();
-?>
+    echo $resultp->rowCount();
+}
