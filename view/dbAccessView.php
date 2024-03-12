@@ -1,3 +1,5 @@
+<?php require_once __DIR__ . '../controller/DBAcessController.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt_BR" dir="ltr">
 <head>
@@ -20,16 +22,7 @@
         <h3>Testando MySQLi</h3>
 
         <pre>
-          <?php
-          require_once "../model/DataBaseAccess/005.class.db.singleton.php";
-
-          var_dump(DStMySQLi::getInstance());
-
-          $dbm2 = DStMySQLi::getInstance();
-          $resultm = $dbm2->query("SELECT * FROM usuario");
-
-          var_dump($resultm);
-          ?>
+          <?= testMySQLi() ?>
         </pre>
       </section>
 
@@ -39,18 +32,7 @@
         <h3>Testando PDO</h3>
 
         <pre>
-          <?php
-          $dbp = DStPDO::getInstance();
-
-          var_dump($dbp);
-
-          $dbp2 = DStPDO::getInstance();
-          $resultp = $dbp2->query('SELECT * FROM usuario');
-
-          var_dump($resultp);
-
-          echo $resultp->rowCount();
-          ?>
+          <?= testPDO() ?>
         </pre>
       </section>
 
@@ -60,16 +42,7 @@
         <h3>Testando MySQLi #2</h3>
 
         <pre>
-          <?php
-          $dbm = DStMySQLi::getInstance();
-
-          var_dump($dbm);
-
-          $dbm2 = DStMySQLi::getInstance();
-          $resultm = $dbm2->query('SELECT * FROM usuario');
-
-          var_dump($resultm);
-          ?>
+          <?= testMySQLi2() ?>
         </pre>
       </section>
 
@@ -79,18 +52,7 @@
         <h3>Testando PDO #2</h3>
 
         <pre>
-          <?php
-          $dbp = DStPDO::getInstance();
-
-          var_dump($dbp);
-
-          $dbp2 = DStPDO::getInstance();
-          $resultp = $dbp2->query('SELECT * FROM usuario');
-
-          var_dump($resultp);
-
-          echo $resultp->rowCount();
-          ?>
+          <?= testPDO2() ?>
         </pre>
       </section>
     </article>
