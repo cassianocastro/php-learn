@@ -45,8 +45,7 @@ function exceptions(): void
     }
     catch ( Exception $e )
     {
-        echo "Exceção capturada: ", $e->getMessage(),
-        "\nLinha: ", $e->getLine(), PHP_EOL;
+        echo "Exceção capturada: {$e->getMessage()}\nLinha: {$e->getLine()}", PHP_EOL;
     }
     finally
     {
@@ -68,7 +67,7 @@ function anonymousFunctions(): void
 
     print "<br>Resultados:<br>";
 
-    $a = array(1, 5, 10, 23);
+    $a = [ 1, 5, 10, 23 ];
     $imploded = implode(", ", $a);
 
     echo
@@ -105,7 +104,7 @@ function anonymousClasses(): void
     function fazAlgo(object $c): void
     {
         $c->print();
-        //echo get_class($c);
+        // echo get_class($c);
     }
 
     fazAlgo($obj1);
