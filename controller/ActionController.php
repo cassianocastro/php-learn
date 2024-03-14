@@ -15,4 +15,3 @@ if ( isset($_POST["action"]) )
     // clicked();
     $_POST["action"]();
 }
-?>
