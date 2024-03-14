@@ -13,12 +13,3 @@ interface iTemplate
 
     public function getHtml($template): string;
 }
-
-/**
- *
- */
-interface iHTMLElement
-{
-
-    public function render(): string;
-}
