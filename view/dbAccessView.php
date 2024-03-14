@@ -31,7 +31,7 @@
             </header>
 
             <pre>
-              <?= testMySQLi() ?>
+              <?= controller\testMySQLi() ?>
             </pre>
           </div>
         </section>
@@ -47,7 +47,7 @@
             </header>
 
             <pre>
-              <?= testPDO() ?>
+              <?= controller\testPDO() ?>
             </pre>
           </div>
         </section>
@@ -63,7 +63,7 @@
             </header>
 
             <pre>
-              <?= testMySQLi2() ?>
+              <?= controller\testMySQLi2() ?>
             </pre>
           </div>
         </section>
@@ -79,7 +79,7 @@
             </header>
 
             <pre>
-              <?= testPDO2() ?>
+              <?= controller\testPDO2() ?>
             </pre>
           </div>
         </section>

@@ -31,7 +31,7 @@
             </header>
 
             <pre>
-              <?= workWithClasses() ?>
+              <?= controller\workWithClasses() ?>
             </pre>
           </div>
         </section>
@@ -47,7 +47,7 @@
             </header>
 
             <pre>
-              <?= createArrayOfObjects() ?>
+              <?= controller\createArrayOfObjects() ?>
             </pre>
           </div>
         </section>
@@ -63,7 +63,7 @@
             </header>
 
             <pre>
-              <?= encapsulating() ?>
+              <?= controller\encapsulating() ?>
             </pre>
           </div>
         </section>
@@ -79,7 +79,7 @@
             </header>
 
             <pre>
-              <?= classesAninhadas() ?>
+              <?= controller\classesAninhadas() ?>
             </pre>
           </div>
         </section>
@@ -95,7 +95,7 @@
             </header>
 
             <pre>
-              <?= constructorsAndDestructors() ?>
+              <?= controller\constructorsAndDestructors() ?>
             </pre>
           </div>
         </section>
@@ -111,7 +111,7 @@
             </header>
 
             <pre>
-              <?= rewriteContructors() ?>
+              <?= controller\rewriteContructors() ?>
             </pre>
           </div>
         </section>
@@ -127,7 +127,7 @@
             </header>
 
             <pre>
-              <?= instancesControl() ?>
+              <?= controller\instancesControl() ?>
             </pre>
           </div>
         </section>
