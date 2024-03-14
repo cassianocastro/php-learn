@@ -1,5 +1,9 @@
 <?php
-// namespace AbstractClass;
+declare(strict_types=1);
+
+namespace model\POO\AbstractClass;
+
+use ReflectionClass;
 
 /**
  *

@@ -1,8 +1,11 @@
 <?php
-// namespace ConcreteClass;
+declare(strict_types=1);
 
-// use Interfaces\iTemplate;
-// use AbstractClass\{ ClasseAbstrata, HTMLElement, HTMLBinaryElement };
+namespace model\POO\ConcreteClass;
+
+use Exception;
+use model\POO\AbstractClass\{ ClasseAbstrata, HTMLElement };
+use model\POO\Interfaces\iTemplate;
 
 /**
  *

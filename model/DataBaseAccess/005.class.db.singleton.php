@@ -1,4 +1,10 @@
 <?php
+declare(strict_types=1);
+
+namespace model\DataBaseAcess;
+
+use Exception, PDO, mysqli;
+
 define("DB_USER", "root");
 define("DB_PASS", "");
 define("DB_HOST", "localhost");

@@ -1,5 +1,7 @@
 <?php
-// namespace Interfaces;
+declare(strict_types=1);
+
+namespace model\POO\Interfaces;
 
 /**
  *
