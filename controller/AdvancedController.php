@@ -74,9 +74,7 @@ function anonymousFunctions(): void
         "duplica($imploded): ",  operacao($a, $duplica),   PHP_EOL,
         "quadrado($imploded): ", operacao($a, "quadrado"), PHP_EOL,
         "triplica($imploded): ",
-        operacao($a, function ($v) {
-            return $v * 3;
-        });
+        operacao($a, fn ($v) => $v * 3);
 }
 
 /**
