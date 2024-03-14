@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace model\DataBaseAcess;
 
-use Exception, PDO, mysqli;
-
 define("DB_USER", "root");
 define("DB_PASS", "");
 define("DB_HOST", "localhost");
@@ -38,48 +36,5 @@ abstract class DbSingleton
         }
 
         return self::$instance[get_called_class()];
-    }
-}
-
-/**
- *
- */
-class DStPDO extends DbSingleton
-{
-
-    static protected function connect()
-    {
-        try
-        {
-            return new PDO(
-                "mysql:host=" . static::$host . ";dbname=" . static::$dbname,
-                static::$user,
-                static::$pass,
-                [ PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'" ]
-            );
-        }
-        catch ( Exception $e )
-        {
-            die($e->getMessage());
-        }
-    }
-}
-
-/**
- *
- */
-class DStMySQLi extends DbSingleton
-{
-
-    static protected function connect()
-    {
-        try
-        {
-            return new mysqli(static::$host, static::$user, static::$pass, static::$dbname);
-        }
-        catch ( Exception $e )
-        {
-            die($e->getMessage());
-        }
     }
 }
