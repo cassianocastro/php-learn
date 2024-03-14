@@ -4,25 +4,8 @@ declare(strict_types=1);
 namespace model\POO\ConcreteClass;
 
 use Exception;
-use model\POO\AbstractClass\{ ClasseAbstrata, HTMLElement };
+use model\POO\AbstractClass\HTMLElement;
 use model\POO\Interfaces\iTemplate;
-
-/**
- *
- */
-class ClasseConcreta2 extends ClasseAbstrata
-{
-
-    protected function pegarValor(): string
-    {
-        return "ClasseConcreta2<br>";
-    }
-
-    public function valorComPrefixo($prefixo): string
-    {
-        return "{$prefixo}ClasseConcreta2<br>";
-    }
-}
 
 /**
  *
