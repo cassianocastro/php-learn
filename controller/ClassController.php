@@ -117,26 +117,26 @@ function instancesControl(): void
     $instanceCount = SimpleObject::getInstanceCount();
 
     echo <<<HTML
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>GUID</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>{$o1->getInstanceId()}</td>
-            <td>{$o1->getInstanceGUID()}</td>
-        </tr>
-        <tr>
-            <td>{$o2->getInstanceId()}</td>
-            <td>{$o2->getInstanceGUID()}</td>
-        </tr>
-        </tbody>
-    </table>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>GUID</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{$o1->getInstanceId()}</td>
+                <td>{$o1->getInstanceGUID()}</td>
+            </tr>
+            <tr>
+                <td>{$o2->getInstanceId()}</td>
+                <td>{$o2->getInstanceGUID()}</td>
+            </tr>
+            </tbody>
+        </table>
 
-    SimpleObjects: $instanceCount\n\n
+        SimpleObjects: $instanceCount\n\n
     HTML;
 
     print_r(SimpleObject::getInstance($x));
