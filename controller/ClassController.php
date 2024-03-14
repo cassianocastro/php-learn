@@ -1,5 +1,21 @@
 <?php
-require_once '../model/POO/Classes/Classes.php';
+declare(strict_types=1);
+
+namespace controller;
+
+use model\POO\Classes\{
+    Conta,
+    ClasseExemplo,
+    ClasseA,
+    ClasseB,
+    ClasseC,
+    ClasseD,
+    ChildObject,
+    ChildObject2,
+    MinhaClasse,
+    Pessoa,
+    SimpleObject
+};
 
 /**
  * Section: Trabalhando com Classes em PHP
@@ -141,7 +157,7 @@ function instancesControl(): void
 
     print_r(SimpleObject::getInstance($x));
     print_r(SimpleObject::getInstance($y));
-    print_r("\nNULL:", SimpleObject::getInstance(null));
+    print_r("\nNULL: {SimpleObject::getInstance(null)}");
 
     echo "\nAll Instances:" . PHP_EOL;
     print_r(SimpleObject::getAllInstances());

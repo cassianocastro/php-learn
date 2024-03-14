@@ -1,9 +1,24 @@
 <?php
+declare(strict_types=1);
 
-require_once '../model/Functions/functions.php';
-require_once '../model/POO/AbstractClass/absClasses.php';
-require_once '../model/POO/Interfaces/interfaces.php';
-require_once '../model/POO/ConcreteClass/concreteClasses.php';
+namespace controller;
+
+use Exception;
+
+use model\POO\ConcreteClass\{
+    ClasseConcreta1,
+    ClasseConcreta2,
+    HTMLBinaryElement,
+    HTMLTextElement,
+    Test,
+    Template
+};
+
+use function model\Functions\{
+    inverse,
+    operacao,
+    operaClasseAbstrata
+};
 
 /**
  * Section: Type-Hinting

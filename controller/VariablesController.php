@@ -1,5 +1,16 @@
 <?php
-require_once '../model/Functions/functions.php';
+declare(strict_types=1);
+
+namespace controller;
+
+use function model\Functions\{
+    calcular,
+    calcula_def,
+    calcula_ref,
+    calcula_local,
+    calcula_global,
+    calcula_static
+};
 
 ini_set("display_errors", true);
 error_reporting(E_ALL);

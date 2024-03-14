@@ -1,5 +1,9 @@
 <?php
-require_once "../model/DataBaseAccess/005.class.db.singleton.php";
+declare(strict_types=1);
+
+namespace controller;
+
+use model\DataBaseAcess\{ DStMySQLi, DStPDO };
 
 /**
  * Section: Testando MySQLi
