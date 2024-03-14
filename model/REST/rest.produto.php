@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/connection.php';
 
 /**
  *
@@ -135,43 +136,32 @@ function getProducts(): array
 
 try
 {
-	require_once __DIR__ . '/connection.php';
+	$method = $_SERVER["REQUEST_METHOD"];
 
-	$method_name = $_SERVER["REQUEST_METHOD"];
-
-    echo $method_name;
-
-	if ( $_SERVER["REQUEST_METHOD"] )
+    switch ( $method )
     {
-		switch ( $method_name )
-        {
-			case 'GET':
-				$data = getProducts();
-			    break;
-			case 'POST':
-				$data = addProduct();
-			    break;
-			case 'PUT':
-                $data = updateProduct();
-			    break;
-			case 'DELETE':
-                $data = deleteProduct();
-			    break;
-		}
-
-		echo json_encode($data);
-	}
-	else
-    {
-		$data = [
-			"status"  => "0",
-			"message" => "Please enter proper request method!"
-        ];
-
-		echo json_encode($data);
-	}
+        case 'GET':
+            $data = getProducts();
+            break;
+        case 'POST':
+            $data = addProduct();
+            break;
+        case 'PUT':
+            $data = updateProduct();
+            break;
+        case 'DELETE':
+            $data = deleteProduct();
+            break;
+        default:
+            throw new Exception("Please enter proper request method!", 0);
+    }
 }
 catch ( Exception $e )
 {
-	echo "Caught exception: {$e->getMessage()}\n";
+	$data = [
+        "status"  => $e->getCode(),
+        "message" => $e->getMessage()
+    ];
 }
+
+print json_encode($data);
