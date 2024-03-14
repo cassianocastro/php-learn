@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace model\POO\ConcreteClass;
 
-use Exception;
 use model\POO\AbstractClass\HTMLElement;
 
 /**
@@ -110,39 +109,5 @@ class HTMLLinkElement extends HTMLBinaryElement
         $this->tag = "a";
         $this->conteudo = $conteudo;
         $this->url = $url;
-    }
-}
-
-/**
- *
- */
-class MyException extends Exception
-{
-
-}
-
-/**
- *
- */
-class Test
-{
-
-    public function testing()
-    {
-        try
-        {
-            try
-            {
-                throw new MyException('MyException: foo!');
-            }
-            catch ( MyException $e )
-            {
-                throw $e; // rethrow it
-            }
-        }
-        catch ( Exception $e )
-        {
-            var_dump($e->getMessage());
-        }
     }
 }
