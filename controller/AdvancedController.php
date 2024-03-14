@@ -147,7 +147,15 @@ function abstractClasses(): void
  */
 function interfaces(): void
 {
-    $arquivo = "<section><h4>{titulo}</h4><p>Outra variavel: {nome}</p></section>";
+    $arquivo = <<<HTML
+        <section>
+            <h4>{titulo}</h4>
+
+            <p>
+                Outra variavel: {nome}
+            </p>
+        </section>
+    HTML;
 
     $t = new Template();
     $t->setVariable("titulo", "Titulo legal");
