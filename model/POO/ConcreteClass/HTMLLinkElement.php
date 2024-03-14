@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace model\POO\ConcreteClass;
 
-use model\POO\AbstractClass\HTMLElement;
-
 /**
  *
  */
