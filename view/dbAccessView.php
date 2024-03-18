@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '../controller/DBAcessController.php'; ?>
+<?php require_once __DIR__ . '/../controller/DBAccessController.php'; ?>
 
 <!DOCTYPE html>
 <html lang="pt_BR" dir="ltr">
