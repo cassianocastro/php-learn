@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Model\DataBaseAcess;
+namespace Model\DataBaseAccess;
 
 use Exception, PDO;
 
