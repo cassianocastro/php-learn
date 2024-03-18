@@ -1,0 +1,42 @@
+{
+    "name": "cassianocastro/php-learn",
+    "description": "Application for tests",
+    "type": "project",
+    "license": "MIT",
+	"readme": "./README.md",
+	"prefer-stable": true,
+    "minimum-stability": "stable",
+	"keywords": [
+		"tests",
+		"php",
+		"environment"
+	],
+    "authors": [
+        {
+            "name": "Cassiano Castro",
+            "email": "development.castro@gmail.com",
+            "role": "Lead"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "PHP\\": "php/"
+        }
+    },
+	"autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+	"config": {
+		"preferred-install": "dist",
+		"sort-packages": true,
+		"optimize-autoloader": false
+	},
+    "require": {
+        "php": ">=8.1.2",
+        "monolog/monolog": "^3.1",
+        "phpunit/phpunit": "^9.5",
+        "twig/twig": "^3.4"
+    }
+}
