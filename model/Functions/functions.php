@@ -93,17 +93,12 @@ function inverse(int | float $x): int | float
  * Cria uma função que recebe um array e uma fórmula que servirá
  * para calcular os dados do array
  */
-function operacao(array $dados, callable $formula)
+function operacao(array $dados, callable | string $formula)
 {
     $t = array_map($formula, $dados);
 
     return implode(", ", $t);
 }
-
-$duplica = function ($val)
-{
-    return $val * 2;
-};
 
 /**
  *
