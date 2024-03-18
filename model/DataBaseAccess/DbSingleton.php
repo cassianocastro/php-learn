@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace Model\DataBaseAccess;
 
-define("DB_USER", "root");
-define("DB_PASS", "");
+define("DB_USER", "php");
+define("DB_PASS", "php");
 define("DB_HOST", "localhost");
-define("DB_NAME", "t308");
+define("DB_NAME", "");
 
 /**
  *
