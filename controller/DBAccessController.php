@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Controller;
 
-use Model\DataBaseAcess\{ DStMySQLi, DStPDO };
+use Model\DataBaseAccess\{ DStMySQLi, DStPDO };
 
 /**
  * Section: Testando MySQLi
