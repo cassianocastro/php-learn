@@ -5,7 +5,7 @@ namespace controller;
 
 use Exception;
 
-use model\POO\ConcreteClass\{
+use Model\POO\ConcreteClass\{
     ClasseConcreta1,
     ClasseConcreta2,
     HTMLBinaryElement,
@@ -14,7 +14,7 @@ use model\POO\ConcreteClass\{
     Template
 };
 
-use function model\Functions\{
+use function Model\Functions\{
     inverse,
     operacao,
     operaClasseAbstrata,

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace controller;
 
-use model\POO\Classes\{
+use Model\POO\Classes\{
     Conta,
     ClasseExemplo,
     ClasseA,

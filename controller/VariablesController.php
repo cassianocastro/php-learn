@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace controller;
 
-use function model\Functions\{
+use function Model\Functions\{
     calcular,
     calcula_def,
     calcula_ref,
