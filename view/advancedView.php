@@ -31,7 +31,7 @@
             </header>
 
             <pre>
-              <?= controller\typeHinting() ?>
+              <?= Controller\typeHinting() ?>
             </pre>
           </div>
         </section>
@@ -47,7 +47,7 @@
             </header>
 
             <pre>
-              <?= controller\exceptions() ?>
+              <?= Controller\exceptions() ?>
             </pre>
           </div>
         </section>
@@ -63,7 +63,7 @@
             </header>
 
             <pre>
-              <?= controller\anonymousFunctions() ?>
+              <?= Controller\anonymousFunctions() ?>
             </pre>
           </div>
         </section>
@@ -79,7 +79,7 @@
             </header>
 
             <pre>
-              <?= controller\anonymousClasses() ?>
+              <?= Controller\anonymousClasses() ?>
             </pre>
           </div>
         </section>
@@ -95,7 +95,7 @@
             </header>
 
             <pre>
-              <?= controller\abstractClasses() ?>
+              <?= Controller\abstractClasses() ?>
             </pre>
           </div>
         </section>
@@ -111,7 +111,7 @@
             </header>
 
             <pre>
-              <?= controller\interfaces() ?>
+              <?= Controller\interfaces() ?>
             </pre>
           </div>
         </section>
@@ -127,7 +127,7 @@
             </header>
 
             <pre>
-              <?= controller\html() ?>
+              <?= Controller\html() ?>
             </pre>
           </div>
         </section>

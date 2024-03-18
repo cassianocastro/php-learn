@@ -22,7 +22,7 @@
         </header>
 
         <pre>
-          <?= controller\demonstrateVars() ?>
+          <?= Controller\demonstrateVars() ?>
         </pre>
       </div>
     </section>
@@ -38,7 +38,7 @@
         </header>
 
         <pre>
-          <?= controller\demonstrateFunctions() ?>
+          <?= Controller\demonstrateFunctions() ?>
         </pre>
       </div>
     </section>
