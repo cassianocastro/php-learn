@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace model\DataBaseAcess;
+namespace Model\DataBaseAcess;
 
 use Exception, mysqli;
 

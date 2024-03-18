@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace model\POO\ConcreteClass;
+namespace Model\POO\ConcreteClass;
 
-use model\POO\Interfaces\iTemplate;
+use Model\POO\Interfaces\iTemplate;
 
 /**
  *

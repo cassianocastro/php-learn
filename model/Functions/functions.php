@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace model\Functions;
 
 use Exception;
-use model\POO\AbstractClass\ClasseAbstrata;
+use Model\POO\AbstractClass\ClasseAbstrata;
 
 /**
  * Passagem de parametros por valor

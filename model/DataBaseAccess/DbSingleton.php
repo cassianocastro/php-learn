@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace model\DataBaseAcess;
+namespace Model\DataBaseAcess;
 
 define("DB_USER", "root");
 define("DB_PASS", "");

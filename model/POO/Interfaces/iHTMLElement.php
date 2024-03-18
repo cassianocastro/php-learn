@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace model\POO\Interfaces;
+namespace Model\POO\Interfaces;
 
 /**
  *
