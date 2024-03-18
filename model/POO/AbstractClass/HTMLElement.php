@@ -24,7 +24,7 @@ abstract class HTMLElement
         {
             $r = new ReflectionClass(get_class($v));
 
-            return $r->isSubclassOf('HTMLElement');
+            return $r->isSubclassOf(__NAMESPACE__ . "\\HTMLElement");
         }
 
         return false;
