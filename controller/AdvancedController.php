@@ -17,7 +17,8 @@ use model\POO\ConcreteClass\{
 use function model\Functions\{
     inverse,
     operacao,
-    operaClasseAbstrata
+    operaClasseAbstrata,
+    teste
 };
 
 /**
