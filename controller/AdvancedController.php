@@ -21,6 +21,11 @@ use function Model\Functions\{
     teste
 };
 
+$duplica = function ($val)
+{
+    return $val * 2;
+};
+
 /**
  * Section: Type-Hinting
  */
@@ -87,10 +92,9 @@ function anonymousFunctions(): void
     $imploded = implode(", ", $a);
 
     echo
-        "duplica($imploded): ",  operacao($a, $duplica),   PHP_EOL,
-        "quadrado($imploded): ", operacao($a, "quadrado"), PHP_EOL,
-        "triplica($imploded): ",
-        operacao($a, fn ($v) => $v * 3);
+        "duplica($imploded): " , operacao($a, $duplica)  , PHP_EOL,
+        // "quadrado($imploded): ", operacao($a, "quadrado"), PHP_EOL,
+        "triplica($imploded): ", operacao($a, fn ($v) => $v * 3);
 }
 
 /**
