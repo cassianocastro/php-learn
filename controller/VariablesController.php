@@ -23,7 +23,7 @@ function demonstrateVars(): void
     $a = "5"; // string
     echo "Valor de \$a: ", $a + 2 . PHP_EOL; // 7, integer
 
-    $b = $a + '5 carros.';
+    @$b = $a + '5 carros.';
 
     echo "Valor de \$b: ", $b . PHP_EOL;
     // 10, integer (conversão implícita)
