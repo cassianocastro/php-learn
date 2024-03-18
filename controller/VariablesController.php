@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace controller;
+namespace Controller;
 
 use function Model\Functions\{
     calcular,
