@@ -20,8 +20,13 @@
     ],
     "autoload": {
         "psr-4": {
-            "PHP\\": "php/"
-        }
+            "Model\\": "model/",
+            "Controller\\": "controller/",
+            "View\\": "view/"
+        },
+        "files": [
+            "model/Functions/functions.php"
+        ]
     },
 	"autoload-dev": {
         "psr-4": {
