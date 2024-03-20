@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+@import "../styles/global.css";
+
+@supports (container-type: inline-size)
+{
+
+    @container header (min-width: 400px)
+    {
+        :any-link
+        {
+            color: red;
+        }
+    }
+
+    @container footer (width > 400px)
+    {
+        :any-link
+        {
+            color: green;
+        }
+    }
+
+    header
+    {
+        container: header / inline-size;
+        min-width: 400px;
+    }
+
+    footer
+    {
+        container: footer / inline-size;
+        width: 450px;
+    }
+}
+
+@supports not (container-type: inline-size)
+{
+
+    header > :any-link
+    {
+        color: coral;
+    }
+
+    footer > :any-link
+    {
+        color: pink;
+    }
+}
