@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {% set assets = "public/pages/aulas_JS" %}
+
+  <link rel="preload" as="style" type="text/css" hreflang="en" href="{{ assets }}/.includes/aula_01/index.css">
+  <link rel="preload" as="style" type="text/css" hreflang="en" href="{{ assets }}/.includes/aula_02/index.css">
+  <link rel="preload" as="style" type="text/css" hreflang="en" href="{{ assets }}/.includes/aula_03/index.css">
+  <link rel="preload" as="style" type="text/css" hreflang="en" href="{{ assets }}/.includes/aula_04/index.css">
+  <link rel="preload" as="style" type="text/css" hreflang="en" href="{{ assets }}/.includes/aula_05/index.css">
+  <link rel="preload" as="style" type="text/css" hreflang="en" href="{{ assets }}/.includes/aula_06/index.css">
+  <link rel="preload" as="style" type="text/css" hreflang="en" href="{{ assets }}/.includes/aula_07/index.css">
+  <link rel="preload" as="style" type="text/css" hreflang="en" href="{{ assets }}/.includes/aula_08/index.css">
+  <link rel="preload" as="style" type="text/css" hreflang="en" href="{{ assets }}/.includes/aula_09/index.css">
+  <link rel="preload" as="style" type="text/css" hreflang="en" href="{{ assets }}/.includes/aula_10/index.css">
+  <link rel="preload" as="style" type="text/css" hreflang="en" href="{{ assets }}/.includes/aula_11/index.css">
+  <link rel="preload" as="style" type="text/css" hreflang="en" href="{{ assets }}/.includes/aula_12/index.css">
+  <link rel="preload" as="style" type="text/css" hreflang="en" href="{{ assets }}/.includes/aula_13/index.css">
+
+  {#
+  <link rel="modulepreload" as="script" type="text/javascript" hreflang="en" href="{{ assets }}/.includes/aula_01/index.js">
+  <link rel="modulepreload" as="script" type="text/javascript" hreflang="en" href="{{ assets }}/.includes/aula_02/index.js">
+  <link rel="modulepreload" as="script" type="text/javascript" hreflang="en" href="{{ assets }}/.includes/aula_03/index.js">
+  <link rel="modulepreload" as="script" type="text/javascript" hreflang="en" href="{{ assets }}/.includes/aula_04/index.js">
+  <link rel="modulepreload" as="script" type="text/javascript" hreflang="en" href="{{ assets }}/.includes/aula_05/index.js">
+  <link rel="modulepreload" as="script" type="text/javascript" hreflang="en" href="{{ assets }}/.includes/aula_06/index.js">
+  <link rel="modulepreload" as="script" type="text/javascript" hreflang="en" href="{{ assets }}/.includes/aula_07/index.js">
+  <link rel="modulepreload" as="script" type="text/javascript" hreflang="en" href="{{ assets }}/.includes/aula_08/index.js">
+  <link rel="modulepreload" as="script" type="text/javascript" hreflang="en" href="{{ assets }}/.includes/aula_09/index.js">
+  <link rel="modulepreload" as="script" type="text/javascript" hreflang="en" href="{{ assets }}/.includes/aula_10/index.js">
+  <link rel="modulepreload" as="script" type="text/javascript" hreflang="en" href="{{ assets }}/.includes/aula_11/index.js">
+  <link rel="modulepreload" as="script" type="text/javascript" hreflang="en" href="{{ assets }}/.includes/aula_12/index.js">
+  <link rel="modulepreload" as="script" type="text/javascript" hreflang="en" href="{{ assets }}/.includes/aula_13/index.js">
+  #}
+
+  <link rel="stylesheet" type="text/css" href="{{ assets }}/index.css">
+
+  <title>Aula JavaScript</title>
+</head>
+<body>
+  {{ include('@inc/header.inc') }}
+
+  <main>
+    <div>
+      <article>
+
+        <header>
+          <div>
+            <h2>Aprendendo Javascript</h2>
+          </div>
+        </header>
+
+        {{ include('@aulas_JS/aula_01/index.twig') }}
+
+        <hr>
+
+        {{ include('@aulas_JS/aula_02/index.twig') }}
+
+        <hr>
+
+        {{ include('@aulas_JS/aula_03/index.twig') }}
+
+        <hr>
+
+        {{ include('@aulas_JS/aula_04/index.twig') }}
+
+        <hr>
+
+        {{ include('@aulas_JS/aula_05/index.twig') }}
+
+        <hr>
+
+        {{ include('@aulas_JS/aula_06/index.twig') }}
+
+        <hr>
+
+        <p>
+          Aulas 07, 08, 09 em arquivos separados...
+        </p>
+
+        {{ include('@aulas_JS/aula_10/index.twig') }}
+
+        <hr>
+
+        {{ include('@aulas_JS/aula_11/index.twig') }}
+
+        <hr>
+
+        {{ include('@aulas_JS/aula_12/index.twig') }}
+
+      </article>
+    </div>
+  </main>
+
+  {{ include('@inc/footer.inc') }}
+
+  <script type="importmap">
+    {{ include('aulas_JS/map.json') }}
+  </script>
+
+  <script defer type="module" src="{{ assets }}/index.js"></script>
+</body>
+</html>

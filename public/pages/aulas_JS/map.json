@@ -1,0 +1,17 @@
+{
+    "imports": {
+        "aula_01": "./{{ assets }}/.includes/aula_01/index.js",
+        "aula_02": "./{{ assets }}/.includes/aula_02/index.js",
+        "aula_03": "./{{ assets }}/.includes/aula_03/index.js",
+        "aula_04": "./{{ assets }}/.includes/aula_04/index.js",
+        "aula_05": "./{{ assets }}/.includes/aula_05/index.js",
+        "aula_06": "./{{ assets }}/.includes/aula_06/index.js",
+        "aula_07": "./{{ assets }}/.includes/aula_07/index.js",
+        "aula_08": "./{{ assets }}/.includes/aula_08/index.js",
+        "aula_09": "./{{ assets }}/.includes/aula_09/index.js",
+        "aula_10": "./{{ assets }}/.includes/aula_10/index.js",
+        "aula_11": "./{{ assets }}/.includes/aula_11/index.js",
+        "aula_12": "./{{ assets }}/.includes/aula_12/index.js",
+        "aula_13": "./{{ assets }}/.includes/aula_13/index.js"
+    }
+}

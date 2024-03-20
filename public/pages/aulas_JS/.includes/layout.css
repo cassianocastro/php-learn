@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+@media only screen and (min-width: 750px) and (max-width: 1023px)
+{
+
+}
+
+@media only screen and (min-width: 1024px)
+{
+
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+footer > a
+{
+    text-align: center;
+}
+
+.mensagem
+{
+    background: aquamarine;
+
+    width: 50%;
+}
+
+#form_Aula06 > div
+{
+    display: block;
+
+    width: 10%;
+}
+
+#alvo
+{
+    background: coral;
+}
