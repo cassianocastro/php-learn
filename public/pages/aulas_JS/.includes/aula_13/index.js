@@ -50,17 +50,14 @@ function index()
 
             coluna2.appendChild(input);
 
-            let coluna3 = document.createElement("div");
-            let span    = document.createElement("span");
-
-            coluna3.classList.add("col-10");
+            let span = document.createElement("span");
             span.innerText = edit.value;
+
+            let coluna3 = document.createElement("div");
+            coluna3.classList.add("col-10");
             coluna3.appendChild(span);
 
-            linha.appendChild(coluna1);
-            linha.appendChild(coluna2);
-            linha.appendChild(coluna3);
-
+            linha.append(coluna1, coluna2, coluna3);
             list.appendChild(linha);
 
             edit.value = "";
