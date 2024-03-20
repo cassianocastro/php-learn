@@ -18,9 +18,11 @@ function index()
             task.classList.add("row", "m-2");
             task.setAttribute("id", id);
 
-            let icon = document.createElement("span");
+            let icon = document.createElement("button");
 
             icon.classList.add("fas", "fa-trash-alt", "text-secondary");
+            icon.setAttribute("type", "button");
+            icon.setAttribute("title", "Remove task");
             icon.addEventListener('click', () => {
                 let line = document.querySelector(`#${id}`);
                 line.remove();
@@ -34,7 +36,7 @@ function index()
 
                 p.classList.toggle("tarefa-completa");
 
-                if (p.classList.contains("tarefa-completa"))
+                if ( p.classList.contains("tarefa-completa") )
                     p.textContent = `(concluido) ${p.textContent}`;
                 else
                     p.textContent = p.textContent.replace("(concluido) ", "");
