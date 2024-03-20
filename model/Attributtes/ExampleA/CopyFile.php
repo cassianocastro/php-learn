@@ -23,7 +23,8 @@ class CopyFile implements ActionHandler
     #[SetUp]
     public function fileExists(): void
     {
-        if ( ! file_exists($this->fileName) ) {
+        if ( ! file_exists($this->fileName) )
+        {
             throw new RuntimeException("File does not exist");
         }
     }
@@ -31,9 +32,12 @@ class CopyFile implements ActionHandler
     #[SetUp]
     public function targetDirectoryExists(): void
     {
-        if ( ! file_exists($this->targetDir) ) {
+        if ( ! file_exists($this->targetDir) )
+        {
             mkdir($this->targetDir);
-        } elseif ( ! is_dir($this->targetDir) ) {
+        }
+        elseif ( ! is_dir($this->targetDir) )
+        {
             throw new RuntimeException("Target directory {$this->targetDir} is not a directory");
         }
     }
