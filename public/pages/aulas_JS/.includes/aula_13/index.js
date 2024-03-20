@@ -18,18 +18,11 @@ function createTask(content)
 
     icon.setAttribute("type", "button");
     icon.setAttribute("title", "Remove task");
-    icon.addEventListener('click', () => task.remove());
+    icon.addEventListener("click", () => task.parentElement.remove());
     icon.classList.add("fas", "fa-trash-alt", "text-secondary");
 
     check.setAttribute("type", "checkbox");
-    check.addEventListener('click', () => {
-        p.classList.toggle("complete");
-
-        if ( p.classList.contains("complete") )
-            p.textContent = `(concluido) ${p.textContent}`;
-        else
-            p.textContent = p.textContent.replace("(concluido) ", "");
-    });
+    check.addEventListener("click", () => p.classList.toggle("complete"));
 
     p.appendChild(text);
     task.append(icon, check, p);
@@ -42,14 +35,22 @@ function createTask(content)
  */
 function index()
 {
-    const input = document.querySelector("#nova-tarefa");
-    const tasks = document.querySelector("#lista-tarefas");
+    const section = document.querySelector("section");
+
+    const form  = section.querySelector("form");
+    const input = section.querySelector("form input");
+    const tasks = section.querySelector("ul");
+
+    form.addEventListener("submit", (e) => e.preventDefault());
 
     input.addEventListener("keypress", (e) => {
         if ( e.key === "Enter" )
         {
             const task = createTask(input.value);
-            tasks.appendChild(task);
+            const item = document.createElement("li");
+
+            item.appendChild(task);
+            tasks.appendChild(item);
 
             input.value = "";
             input.focus();
@@ -58,4 +59,5 @@ function index()
 }
 
 index();
+
 // export { index };
