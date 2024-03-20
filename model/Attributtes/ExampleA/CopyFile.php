@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace PHP\Attributes\ExampleA;
+namespace Model\Attributes\ExampleA;
 
 use RuntimeException;
 
