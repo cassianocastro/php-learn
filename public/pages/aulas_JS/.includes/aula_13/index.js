@@ -26,7 +26,7 @@ function index()
             trashIcon.setAttribute("linha", `linha_${contador}`);
 
             trashIcon.addEventListener('click', () => {
-                let line = document.querySelector(`#${this.getAttribute("linha")}`);
+                let line = document.querySelector(`#${trashIcon.getAttribute("linha")}`);
                 line.remove();
             });
 
@@ -39,7 +39,7 @@ function index()
             input.setAttribute("type", "checkbox");
             input.setAttribute("linha", `linha_${contador}`);
             input.addEventListener('click', () => {
-                let s = document.querySelector(`#${this.getAttribute("linha")} > div > span`);
+                let s = document.querySelector(`#${input.getAttribute("linha")} > div > span`);
                 s.classList.toggle("tarefa-completa");
 
                 if (s.classList.contains("tarefa-completa"))
@@ -68,4 +68,5 @@ function index()
     });
 }
 
-export { index };
+index();
+// export { index };
