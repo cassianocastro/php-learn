@@ -40,21 +40,24 @@ function index()
             input.setAttribute("type", "checkbox");
             input.setAttribute("linha", `linha_${count}`);
             input.addEventListener('click', () => {
-                let s = document.querySelector(`#${input.getAttribute("linha")} > div > span`);
-                s.classList.toggle("tarefa-completa");
+                let p = document.querySelector(`#${input.getAttribute("linha")} > div > p`);
 
-                if (s.classList.contains("tarefa-completa"))
-                    s.textContent = `(concluido) ${s.textContent}`;
+                p.classList.toggle("tarefa-completa");
+
+                if (p.classList.contains("tarefa-completa"))
+                    p.textContent = `(concluido) ${p.textContent}`;
                 else
-                    s.textContent = s.textContent.replace("(concluido) ", "");
+                    p.textContent = p.textContent.replace("(concluido) ", "");
             });
 
-            let span = document.createElement("span");
-            span.innerText = edit.value;
+            let p    = document.createElement("p");
+            let text = document.createTextNode(edit.value);
+
+            p.appendChild(text);
 
             coluna1.appendChild(icon);
             coluna2.appendChild(input);
-            coluna3.appendChild(span);
+            coluna3.appendChild(p);
 
             task.append(coluna1, coluna2, coluna3);
             list.appendChild(task);
