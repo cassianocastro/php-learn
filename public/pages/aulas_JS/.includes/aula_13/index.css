@@ -1,11 +1,5 @@
 @charset "UTF-8";
 
-.tarefa-completa
-{
-    color: red;
-    text-decoration: line-through;
-}
-
 .task
 {
     align-items: center;
@@ -20,4 +14,10 @@
 
     outline: none;
     padding: 5px;
+}
+
+.complete
+{
+    color: red;
+    text-decoration: line-through;
 }
