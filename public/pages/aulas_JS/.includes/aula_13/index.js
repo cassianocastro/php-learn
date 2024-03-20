@@ -5,25 +5,25 @@
  */
 function index()
 {
-    let contador = 0;
-    let edit     = document.querySelector("#nova-tarefa");
-    let lista    = document.querySelector("#lista-tarefas");
+    let count = 0;
+    let edit  = document.querySelector("#nova-tarefa");
+    let list  = document.querySelector("#lista-tarefas");
 
-    edit.addEventListener('keypress', (event) => {
-        if (event.key === "Enter")
+    edit.addEventListener('keypress', (e) => {
+        if (e.key === "Enter")
         {
-            contador++;
+            count++;
 
             let linha = document.createElement("div");
             linha.classList.add("row", "m-2");
-            linha.setAttribute("id", `linha_${contador}`);
+            linha.setAttribute("id", `linha_${count}`);
 
             let coluna1 = document.createElement("div");
             coluna1.classList.add("col-1");
 
             let trashIcon = document.createElement("i");
             trashIcon.classList.add("fas", "fa-trash-alt", "text-secondary");
-            trashIcon.setAttribute("linha", `linha_${contador}`);
+            trashIcon.setAttribute("linha", `linha_${count}`);
 
             trashIcon.addEventListener('click', () => {
                 let line = document.querySelector(`#${trashIcon.getAttribute("linha")}`);
@@ -37,7 +37,7 @@ function index()
 
             let input = document.createElement("input");
             input.setAttribute("type", "checkbox");
-            input.setAttribute("linha", `linha_${contador}`);
+            input.setAttribute("linha", `linha_${count}`);
             input.addEventListener('click', () => {
                 let s = document.querySelector(`#${input.getAttribute("linha")} > div > span`);
                 s.classList.toggle("tarefa-completa");
@@ -60,7 +60,8 @@ function index()
             linha.appendChild(coluna1);
             linha.appendChild(coluna2);
             linha.appendChild(coluna3);
-            lista.appendChild(linha);
+
+            list.appendChild(linha);
 
             edit.value = "";
             edit.focus();
