@@ -9,23 +9,14 @@ function index()
     let edit  = document.querySelector("#nova-tarefa");
     let list  = document.querySelector("#lista-tarefas");
 
-    edit.addEventListener('keypress', (e) => {
-        if (e.key === "Enter")
+    edit.addEventListener("keypress", (e) => {
+        if ( e.key === "Enter" )
         {
-            let id = `linha_${++count}`;
+            let id = `task_${++count}`;
 
             let task = document.createElement("div");
             task.classList.add("row", "m-2");
             task.setAttribute("id", id);
-
-            let coluna1 = document.createElement("div");
-            coluna1.classList.add("col-1");
-
-            let coluna2 = document.createElement("div");
-            coluna2.classList.add("col-1");
-
-            let coluna3 = document.createElement("div");
-            coluna3.classList.add("col-10");
 
             let icon = document.createElement("span");
 
@@ -39,7 +30,7 @@ function index()
 
             input.setAttribute("type", "checkbox");
             input.addEventListener('click', () => {
-                let p = document.querySelector(`#${id} > div > p`);
+                let p = document.querySelector(`#${id} > p`);
 
                 p.classList.toggle("tarefa-completa");
 
@@ -54,11 +45,7 @@ function index()
 
             p.appendChild(text);
 
-            coluna1.appendChild(icon);
-            coluna2.appendChild(input);
-            coluna3.appendChild(p);
-
-            task.append(coluna1, coluna2, coluna3);
+            task.append(icon, input, p);
             list.appendChild(task);
 
             edit.value = "";
