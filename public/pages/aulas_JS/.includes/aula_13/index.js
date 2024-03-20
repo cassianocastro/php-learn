@@ -12,11 +12,11 @@ function index()
     edit.addEventListener('keypress', (e) => {
         if (e.key === "Enter")
         {
-            count++;
+            let id = `linha_${++count}`;
 
             let task = document.createElement("div");
             task.classList.add("row", "m-2");
-            task.setAttribute("id", `linha_${count}`);
+            task.setAttribute("id", id);
 
             let coluna1 = document.createElement("div");
             coluna1.classList.add("col-1");
@@ -27,20 +27,19 @@ function index()
             let coluna3 = document.createElement("div");
             coluna3.classList.add("col-10");
 
-            let icon = document.createElement("i");
-            icon.classList.add("fas", "fa-trash-alt", "text-secondary");
-            icon.setAttribute("linha", `linha_${count}`);
+            let icon = document.createElement("span");
 
+            icon.classList.add("fas", "fa-trash-alt", "text-secondary");
             icon.addEventListener('click', () => {
-                let line = document.querySelector(`#${icon.getAttribute("linha")}`);
+                let line = document.querySelector(`#${id}`);
                 line.remove();
             });
 
             let input = document.createElement("input");
+
             input.setAttribute("type", "checkbox");
-            input.setAttribute("linha", `linha_${count}`);
             input.addEventListener('click', () => {
-                let p = document.querySelector(`#${input.getAttribute("linha")} > div > p`);
+                let p = document.querySelector(`#${id} > div > p`);
 
                 p.classList.toggle("tarefa-completa");
 
