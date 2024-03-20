@@ -6,52 +6,43 @@
 function index()
 {
     let count = 0;
-    let edit  = document.querySelector("#nova-tarefa");
-    let list  = document.querySelector("#lista-tarefas");
 
-    edit.addEventListener("keypress", (e) => {
+    const input = document.querySelector("#nova-tarefa");
+    const tasks = document.querySelector("#lista-tarefas");
+
+    input.addEventListener("keypress", (e) => {
         if ( e.key === "Enter" )
         {
-            let id = `task_${++count}`;
+            const task  = document.createElement("div");
+            const icon  = document.createElement("button");
+            const check = document.createElement("input");
+            const p     = document.createElement("p");
+            const text  = document.createTextNode(input.value);
 
-            let task = document.createElement("div");
-            task.classList.add("row", "m-2");
-            task.setAttribute("id", id);
+            task.setAttribute("id", `task_${++count}`);
+            task.setAttribute("class", "task");
 
-            let icon = document.createElement("button");
-
-            icon.classList.add("fas", "fa-trash-alt", "text-secondary");
             icon.setAttribute("type", "button");
             icon.setAttribute("title", "Remove task");
-            icon.addEventListener('click', () => {
-                let line = document.querySelector(`#${id}`);
-                line.remove();
-            });
+            icon.addEventListener('click', () => task.remove());
+            icon.classList.add("fas", "fa-trash-alt", "text-secondary");
 
-            let input = document.createElement("input");
+            check.setAttribute("type", "checkbox");
+            check.addEventListener('click', () => {
+                p.classList.toggle("complete");
 
-            input.setAttribute("type", "checkbox");
-            input.addEventListener('click', () => {
-                let p = document.querySelector(`#${id} > p`);
-
-                p.classList.toggle("tarefa-completa");
-
-                if ( p.classList.contains("tarefa-completa") )
+                if ( p.classList.contains("complete") )
                     p.textContent = `(concluido) ${p.textContent}`;
                 else
                     p.textContent = p.textContent.replace("(concluido) ", "");
             });
 
-            let p    = document.createElement("p");
-            let text = document.createTextNode(edit.value);
-
             p.appendChild(text);
+            task.append(icon, check, p);
+            tasks.appendChild(task);
 
-            task.append(icon, input, p);
-            list.appendChild(task);
-
-            edit.value = "";
-            edit.focus();
+            input.value = "";
+            input.focus();
         }
     });
 }
