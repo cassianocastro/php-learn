@@ -14,26 +14,27 @@ function index()
         {
             count++;
 
-            let linha = document.createElement("div");
-            linha.classList.add("row", "m-2");
-            linha.setAttribute("id", `linha_${count}`);
+            let task = document.createElement("div");
+            task.classList.add("row", "m-2");
+            task.setAttribute("id", `linha_${count}`);
 
             let coluna1 = document.createElement("div");
             coluna1.classList.add("col-1");
 
-            let trashIcon = document.createElement("i");
-            trashIcon.classList.add("fas", "fa-trash-alt", "text-secondary");
-            trashIcon.setAttribute("linha", `linha_${count}`);
-
-            trashIcon.addEventListener('click', () => {
-                let line = document.querySelector(`#${trashIcon.getAttribute("linha")}`);
-                line.remove();
-            });
-
-            coluna1.appendChild(trashIcon);
-
             let coluna2 = document.createElement("div");
             coluna2.classList.add("col-1");
+
+            let coluna3 = document.createElement("div");
+            coluna3.classList.add("col-10");
+
+            let icon = document.createElement("i");
+            icon.classList.add("fas", "fa-trash-alt", "text-secondary");
+            icon.setAttribute("linha", `linha_${count}`);
+
+            icon.addEventListener('click', () => {
+                let line = document.querySelector(`#${icon.getAttribute("linha")}`);
+                line.remove();
+            });
 
             let input = document.createElement("input");
             input.setAttribute("type", "checkbox");
@@ -48,17 +49,15 @@ function index()
                     s.textContent = s.textContent.replace("(concluido) ", "");
             });
 
-            coluna2.appendChild(input);
-
             let span = document.createElement("span");
             span.innerText = edit.value;
 
-            let coluna3 = document.createElement("div");
-            coluna3.classList.add("col-10");
+            coluna1.appendChild(icon);
+            coluna2.appendChild(input);
             coluna3.appendChild(span);
 
-            linha.append(coluna1, coluna2, coluna3);
-            list.appendChild(linha);
+            task.append(coluna1, coluna2, coluna3);
+            list.appendChild(task);
 
             edit.value = "";
             edit.focus();
