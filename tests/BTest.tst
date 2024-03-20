@@ -17,7 +17,7 @@ final class BTest
     public function canDumpAttrData(ReflectionClass $reflection): void
     {
         $attributes = $reflection->getAttributes(
-            "PHP\Attributes\ExampleB\MyAttribute"
+            "Model\Attributes\ExampleB\MyAttribute"
         );
 
         foreach ( $attributes as $attribute )

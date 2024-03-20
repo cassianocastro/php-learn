@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use ReflectionObject;
-use PHP\Attributes\ExampleA\{ ActionHandler, SetUp };
+use Model\Attributes\ExampleA\{ ActionHandler, SetUp };
 
 /**
  *
