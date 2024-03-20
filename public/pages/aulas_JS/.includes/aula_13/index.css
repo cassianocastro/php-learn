@@ -5,3 +5,19 @@
     color: red;
     text-decoration: line-through;
 }
+
+.task
+{
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+.task > button
+{
+    background: none;
+    border: none;
+
+    outline: none;
+    padding: 5px;
+}
